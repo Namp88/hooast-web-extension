@@ -30,6 +30,7 @@ export interface TransactionRequest {
   to: string;
   amount: number | string;
   fee?: string; // Optional custom fee in sompi
+  payload?: string; // Optional transaction payload (will use subnetwork 0x03)
 }
 
 export interface ConnectedSite {

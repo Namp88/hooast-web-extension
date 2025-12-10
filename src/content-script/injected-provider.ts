@@ -85,7 +85,7 @@ class HoosatProvider {
   }
 
   // Send transaction
-  async sendTransaction(params: { to: string; amount: number | string; fee?: string }): Promise<string> {
+  async sendTransaction(params: { to: string; amount: number | string; fee?: string; payload?: string }): Promise<string> {
     return this.request('hoosat_sendTransaction', params);
   }
 

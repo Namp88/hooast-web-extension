@@ -1,6 +1,6 @@
 {
   "name": "hoosat-web-extension",
-  "version": "0.3.6",
+  "version": "0.3.8",
   "description": "Browser extension wallet for Hoosat blockchain",
   "scripts": {
     "build": "webpack --mode production",
@@ -18,7 +18,7 @@
   "dependencies": {
     "buffer": "^6.0.3",
     "crypto-js": "^4.2.0",
-    "hoosat-sdk-web": "^0.1.4"
+    "hoosat-sdk-web": "^0.1.6"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.268",

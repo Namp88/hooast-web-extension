@@ -117,7 +117,7 @@ export class WalletManager {
    * Calculate transaction fee
    */
   private calculateFee(inputs: number, outputs: number): string {
-    return HoosatCrypto.calculateFee(inputs, outputs);
+    return HoosatCrypto.calculateMinFee(inputs, outputs);
   }
 
   /**
@@ -164,7 +164,7 @@ export class WalletManager {
   /**
    * Estimate fee for transaction
    */
-  async estimateFee(params: { to: string; amount: number | string }): Promise<FeeEstimate> {
+  async estimateFee(params: { to: string; amount: number | string; payload?: string }): Promise<FeeEstimate> {
     if (!this.unlockedWallet) {
       throw new Error('Wallet is locked');
     }
@@ -186,12 +186,20 @@ export class WalletManager {
       const numInputs = utxos.length;
       const numOutputs = 2; // recipient + change
 
-      const fee = this.calculateFee(numInputs, numOutputs);
+      // Calculate payload size if provided
+      const payloadSize = params.payload ? Buffer.byteLength(params.payload, 'utf-8') : 0;
+
+      const fee = await this.calculateMinFee({
+        inputs: numInputs,
+        outputs: numOutputs,
+        payloadSize: payloadSize,
+      });
 
       console.log('💵 Fee estimate:', {
         fee: fee + ' sompi',
         inputs: numInputs,
         outputs: numOutputs,
+        payloadSize,
       });
 
       return {
@@ -209,7 +217,7 @@ export class WalletManager {
   /**
    * Send transaction
    */
-  async sendTransaction(params: { to: string; amount: number | string; fee?: string }): Promise<string> {
+  async sendTransaction(params: { to: string; amount: number | string; fee?: string; payload?: string }): Promise<string> {
     if (!this.unlockedWallet) {
       throw new Error('Wallet is locked');
     }
@@ -223,10 +231,15 @@ export class WalletManager {
       // Convert amount to sompi if needed
       const amountSompi = typeof params.amount === 'string' ? params.amount : Math.floor(params.amount * SOMPI_PER_HTN).toString();
 
+      // Calculate payload size for fee calculation
+      const payloadSize = params.payload ? Buffer.byteLength(params.payload, 'utf-8') : 0;
+
       console.log('💸 Sending transaction:', {
         to: params.to,
         amount: amountSompi,
         customFee: params.fee,
+        hasPayload: !!params.payload,
+        payloadSize,
       });
 
       // Get UTXOs for current wallet
@@ -244,10 +257,14 @@ export class WalletManager {
       console.log('💰 Total available:', totalAvailable.toString(), 'sompi');
       console.log('📊 UTXOs count:', utxos.length);
 
-      // Use custom fee or calculate default
+      // Use custom fee or calculate with payload size
       const numInputs = utxos.length;
       const numOutputs = 2; // recipient + change
-      const txFee = params.fee || this.calculateFee(numInputs, numOutputs);
+      const txFee = params.fee || await this.calculateMinFee({
+        inputs: numInputs,
+        outputs: numOutputs,
+        payloadSize: payloadSize,
+      });
 
       console.log('💵 Transaction fee:', txFee, 'sompi', params.fee ? '(custom)' : '(auto)');
 
@@ -280,6 +297,22 @@ export class WalletManager {
 
       // Add change output
       txBuilder.addChangeOutput(this.unlockedWallet.address);
+
+      // If payload is provided, set subnetwork and payload
+      if (params.payload) {
+        // Use subnetwork 0x03 which supports payload
+        const PAYLOAD_SUBNETWORK = '0300000000000000000000000000000000000000';
+        txBuilder.setSubnetworkId(PAYLOAD_SUBNETWORK);
+
+        // Convert payload string to hex
+        const payloadHex = Buffer.from(params.payload, 'utf-8').toString('hex');
+        txBuilder.setPayload(payloadHex);
+
+        console.log('📦 Payload added:', {
+          size: payloadSize,
+          subnetwork: PAYLOAD_SUBNETWORK,
+        });
+      }
 
       // Sign transaction
       console.log('✍️ Signing transaction...');
