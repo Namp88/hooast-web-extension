@@ -815,6 +815,26 @@
     "message": "Birleştirme Tamamlandı!",
     "description": "Consolidation Complete!"
   },
+  "consolidationCompleteMultiple": {
+    "message": "Birleştirme Tamamlandı! $1 işlem oluşturuldu",
+    "description": "Consolidation Complete! Multiple transactions",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "consolidatedInBatches": {
+    "message": "$1 parti halinde işlendi (düğüm sınırı: 88 girdi/tx)",
+    "description": "Batch processing information",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "utxosReduced": {
     "message": "UTXO: $1 → 1",
     "description": "UTXOs: X → 1",

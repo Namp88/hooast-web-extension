@@ -266,7 +266,14 @@ export async function showUtxoManagementScreen(
         });
 
         if (response.success) {
-          await showAlertDialog(t('success'), t('consolidationComplete'), 'success');
+          // response.data is now an array of transaction IDs
+          const txIds: string[] = response.data || [];
+          const message =
+            txIds.length > 1
+              ? t('consolidationCompleteMultiple', [txIds.length.toString()])
+              : t('consolidationComplete');
+
+          await showAlertDialog(t('success'), message, 'success');
           // Reload UTXO info to show updated count
           await loadUtxoInfo();
         } else {

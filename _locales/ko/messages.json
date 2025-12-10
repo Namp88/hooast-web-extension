@@ -815,6 +815,26 @@
     "message": "통합 완료!",
     "description": "Consolidation Complete!"
   },
+  "consolidationCompleteMultiple": {
+    "message": "통합 완료! $1개의 트랜잭션이 생성되었습니다",
+    "description": "Consolidation Complete! Multiple transactions",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "consolidatedInBatches": {
+    "message": "$1개의 배치로 처리됨 (노드 제한: 88 입력/tx)",
+    "description": "Batch processing information",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "utxosReduced": {
     "message": "UTXO: $1 → 1",
     "description": "UTXOs: X → 1",

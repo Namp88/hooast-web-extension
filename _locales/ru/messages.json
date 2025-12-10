@@ -830,6 +830,26 @@
     "message": "Консолидация завершена!",
     "description": "Consolidation Complete!"
   },
+  "consolidationCompleteMultiple": {
+    "message": "Консолидация завершена! Создано транзакций: $1",
+    "description": "Consolidation Complete! Multiple transactions",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "consolidatedInBatches": {
+    "message": "Обработано в $1 батчах (лимит ноды: 88 входов/тх)",
+    "description": "Batch processing information",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "utxosReduced": {
     "message": "UTXO: $1 → 1",
     "description": "UTXOs: X → 1",

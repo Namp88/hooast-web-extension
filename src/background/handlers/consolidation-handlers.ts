@@ -16,13 +16,12 @@ export async function handleGetConsolidationInfo(walletManager: WalletManager): 
 }
 
 /**
- * Execute UTXO consolidation
+ * Execute UTXO consolidation (may create multiple transactions for large UTXO sets)
  */
-export async function handleConsolidateUtxos(walletManager: WalletManager): Promise<string> {
+export async function handleConsolidateUtxos(walletManager: WalletManager): Promise<string[]> {
   try {
-    const txId = await walletManager.consolidateUtxos();
-    console.log('✅ Consolidation transaction submitted:', txId);
-    return txId;
+    const txIds = await walletManager.consolidateUtxos();
+    return txIds;
   } catch (error: any) {
     console.error('❌ Consolidation failed:', error);
     throw new Error(`Consolidation failed: ${error.message}`);
@@ -51,7 +50,6 @@ export async function handleUpdateConsolidationSettings(data: Partial<Consolidat
       ...data,
     };
     await saveConsolidationSettings(updatedSettings);
-    console.log('✅ Consolidation settings updated:', updatedSettings);
   } catch (error: any) {
     throw new Error(`Failed to update consolidation settings: ${error.message}`);
   }
@@ -63,7 +61,6 @@ export async function handleUpdateConsolidationSettings(data: Partial<Consolidat
 export async function handleMarkConsolidationModalSeen(): Promise<void> {
   try {
     await markConsolidationModalSeen();
-    console.log('✅ Consolidation modal marked as seen');
   } catch (error: any) {
     throw new Error(`Failed to mark modal as seen: ${error.message}`);
   }

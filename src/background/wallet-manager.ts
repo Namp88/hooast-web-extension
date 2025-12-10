@@ -387,17 +387,19 @@ export class WalletManager {
   }
 
   /**
-   * Consolidate all UTXOs into one
+   * Consolidate all UTXOs into one or more batches (max 80 inputs per transaction)
+   * Returns array of transaction IDs
    */
-  async consolidateUtxos(): Promise<string> {
+  async consolidateUtxos(): Promise<string[]> {
     if (!this.unlockedWallet) {
       throw new Error('Wallet is locked');
     }
 
-    try {
-      console.log('🔄 Starting UTXO consolidation...');
+    const MAX_INPUTS_PER_TX = 80; // Safe limit (node allows 88, we use 80 for margin)
+    const txIds: string[] = [];
 
-      // Get all UTXOs
+    try {
+      // Get all UTXOs (snapshot - will not refresh during processing)
       const utxos = await this.getUtxos(this.unlockedWallet.address);
 
       if (utxos.length === 0) {
@@ -408,60 +410,65 @@ export class WalletManager {
         throw new Error('Only 1 UTXO - consolidation not needed');
       }
 
-      console.log(`📊 Consolidating ${utxos.length} UTXOs`);
+      // Calculate number of batches needed
+      const numBatches = Math.ceil(utxos.length / MAX_INPUTS_PER_TX);
 
-      // Calculate total amount
-      const totalAmount = utxos.reduce((sum, utxo) => {
-        return sum + BigInt(utxo.utxoEntry.amount);
-      }, BigInt(0));
+      // Process UTXOs in batches
+      for (let batchIndex = 0; batchIndex < numBatches; batchIndex++) {
+        const startIdx = batchIndex * MAX_INPUTS_PER_TX;
+        const endIdx = Math.min(startIdx + MAX_INPUTS_PER_TX, utxos.length);
+        const batchUtxos = utxos.slice(startIdx, endIdx);
 
-      console.log(`💰 Total amount: ${totalAmount.toString()} sompi`);
+        // Calculate total amount for this batch
+        const batchTotal = batchUtxos.reduce((sum, utxo) => {
+          return sum + BigInt(utxo.utxoEntry.amount);
+        }, BigInt(0));
 
-      // Calculate consolidation fee
-      const fee = await this.calculateMinFee({
-        inputs: utxos.length,
-        outputs: 1,
-      });
+        // Calculate fee for this batch
+        const fee = await this.calculateMinFee({
+          inputs: batchUtxos.length,
+          outputs: 1,
+        });
 
-      console.log(`💵 Consolidation fee: ${fee} sompi`);
+        const outputAmount = batchTotal - BigInt(fee);
 
-      const outputAmount = totalAmount - BigInt(fee);
+        if (outputAmount <= 0n) {
+          throw new Error(`Batch ${batchIndex + 1}: Fee exceeds total UTXO value`);
+        }
 
-      if (outputAmount <= 0n) {
-        throw new Error('Fee exceeds total UTXO value');
+        // Build consolidation transaction for this batch
+        const txBuilder = new HoosatTxBuilder({ debug: false });
+
+        // Add batch UTXOs as inputs
+        for (const utxo of batchUtxos) {
+          txBuilder.addInput(utxo, this.unlockedWallet.privateKey);
+        }
+
+        // Single output back to our address
+        txBuilder.addOutput(this.unlockedWallet.address, outputAmount.toString());
+
+        // Set fee
+        txBuilder.setFee(fee);
+
+        // Sign transaction
+        const signedTx = txBuilder.sign();
+
+        // Submit transaction
+        const result = await this.client.submitTransaction(signedTx);
+
+        if (!result || !result.transactionId) {
+          throw new Error(`Failed to submit consolidation transaction for batch ${batchIndex + 1}`);
+        }
+
+        txIds.push(result.transactionId);
+
+        // Small delay between batches to avoid overwhelming the node
+        if (batchIndex < numBatches - 1) {
+          await new Promise(resolve => setTimeout(resolve, 1000)); // 1 second delay between batches
+        }
       }
 
-      // Build consolidation transaction
-      const txBuilder = new HoosatTxBuilder({ debug: false });
-
-      // Add all UTXOs as inputs
-      for (const utxo of utxos) {
-        txBuilder.addInput(utxo, this.unlockedWallet.privateKey);
-      }
-
-      // Single output back to our address
-      txBuilder.addOutput(this.unlockedWallet.address, outputAmount.toString());
-
-      // Set fee
-      txBuilder.setFee(fee);
-
-      // Sign transaction
-      console.log('✍️ Signing consolidation transaction...');
-      const signedTx = txBuilder.sign();
-
-      // Submit transaction
-      console.log('📤 Submitting consolidation transaction...');
-      const result = await this.client.submitTransaction(signedTx);
-
-      if (!result || !result.transactionId) {
-        throw new Error('Failed to submit consolidation transaction');
-      }
-
-      console.log('✅ Consolidation complete:', result.transactionId);
-      console.log(`   ${utxos.length} UTXOs → 1 UTXO`);
-      console.log(`   Fee paid: ${fee} sompi`);
-
-      return result.transactionId;
+      return txIds;
     } catch (error: any) {
       console.error('❌ Failed to consolidate UTXOs:', error);
       const errorMessage = error?.message || String(error) || 'Unknown error';

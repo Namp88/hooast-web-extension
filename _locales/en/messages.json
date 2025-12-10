@@ -831,6 +831,26 @@
     "message": "Consolidation Complete!",
     "description": "Consolidation success title"
   },
+  "consolidationCompleteMultiple": {
+    "message": "Consolidation Complete! Created $1 transactions",
+    "description": "Consolidation success with multiple transactions",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "consolidatedInBatches": {
+    "message": "Processed in $1 batches (node limit: 88 inputs/tx)",
+    "description": "Batch processing information",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "utxosReduced": {
     "message": "UTXOs: $1 → 1",
     "description": "UTXO reduction message",

@@ -815,6 +815,26 @@
     "message": "整合完成！",
     "description": "Consolidation Complete!"
   },
+  "consolidationCompleteMultiple": {
+    "message": "整合完成！已创建 $1 笔交易",
+    "description": "Consolidation Complete! Multiple transactions",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "consolidatedInBatches": {
+    "message": "已分 $1 批处理（节点限制：88 个输入/交易）",
+    "description": "Batch processing information",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "utxosReduced": {
     "message": "UTXO: $1 → 1",
     "description": "UTXOs: X → 1",

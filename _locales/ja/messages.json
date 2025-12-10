@@ -815,6 +815,26 @@
     "message": "統合完了！",
     "description": "Consolidation Complete!"
   },
+  "consolidationCompleteMultiple": {
+    "message": "統合完了！$1件のトランザクションを作成しました",
+    "description": "Consolidation Complete! Multiple transactions",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "consolidatedInBatches": {
+    "message": "$1バッチで処理されました（ノード制限：88入力/tx）",
+    "description": "Batch processing information",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "utxosReduced": {
     "message": "UTXO: $1 → 1",
     "description": "UTXOs: X → 1",

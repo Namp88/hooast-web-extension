@@ -815,6 +815,26 @@
     "message": "Konsolidointi valmis!",
     "description": "Consolidation Complete!"
   },
+  "consolidationCompleteMultiple": {
+    "message": "Konsolidointi valmis! Luotiin $1 transaktiota",
+    "description": "Consolidation Complete! Multiple transactions",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "consolidatedInBatches": {
+    "message": "Käsitelty $1 erässä (noden raja: 88 syötettä/tx)",
+    "description": "Batch processing information",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
   "utxosReduced": {
     "message": "UTXO:t: $1 → 1",
     "description": "UTXOs: X → 1",

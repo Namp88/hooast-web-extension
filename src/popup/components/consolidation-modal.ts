@@ -142,10 +142,16 @@ export function showConsolidationSuccess(
   app: HTMLElement,
   utxoCount: number,
   fee: string,
+  txCount: number,
   onDone: () => void
 ): void {
   const modal = document.createElement('div');
   modal.className = 'modal-overlay';
+
+  const batchInfo = txCount > 1
+    ? `<p class="batch-info">${t('consolidatedInBatches', [txCount.toString()])}</p>`
+    : '';
+
   modal.innerHTML = `
     <div class="modal-content consolidation-success">
       <div class="modal-header">
@@ -155,6 +161,7 @@ export function showConsolidationSuccess(
       <div class="modal-body">
         <div class="success-info">
           <p class="utxos-reduced">${t('utxosReduced', [utxoCount.toString()])}</p>
+          ${batchInfo}
           <p>${t('feePaid', [HoosatUtils.sompiToAmount(fee)])}</p>
           <p class="success-message">${t('futureTransactionsCheaper')} ${ICONS.party}</p>
         </div>

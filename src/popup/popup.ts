@@ -647,8 +647,11 @@ async function handleConsolidation(): Promise<void> {
       throw new Error(response.error || 'Consolidation failed');
     }
 
+    // response.data is now an array of transaction IDs
+    const txIds: string[] = response.data || [];
+
     // Show success modal
-    showConsolidationSuccess(app, info.utxoCount, info.consolidationFee, async () => {
+    showConsolidationSuccess(app, info.utxoCount, info.consolidationFee, txIds.length, async () => {
       // Refresh wallet screen to show updated UTXO count
       await showWallet();
     });
