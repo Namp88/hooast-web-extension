@@ -5,6 +5,7 @@ import { SessionManager } from './session-manager';
 import {
   handleGenerateWallet,
   handleImportWallet,
+  handleImportWalletFromMnemonic,
   handleUnlockWallet,
   handleLockWallet,
   handleResetWallet,
@@ -99,6 +100,9 @@ async function handleMessage(message: ExtensionMessage, sender: chrome.runtime.M
 
     case 'IMPORT_WALLET':
       return handleImportWallet(data, walletManager);
+
+    case 'IMPORT_WALLET_MNEMONIC':
+      return handleImportWalletFromMnemonic(data, walletManager);
 
     case 'UNLOCK_WALLET':
       const unlockResult = await handleUnlockWallet(data, walletManager);

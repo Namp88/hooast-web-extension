@@ -8,6 +8,7 @@ import {
   showWelcomeScreen,
   showGenerateWalletScreen,
   showImportWalletScreen,
+  showImportMnemonicScreen,
   showUnlockScreen,
   showWalletScreen,
   showSendScreen,
@@ -363,7 +364,7 @@ async function handleSignMessageReject(requestId: string): Promise<void> {
  * Show welcome screen
  */
 function showWelcome() {
-  showWelcomeScreen(app, showGenerate, showImport);
+  showWelcomeScreen(app, showGenerate, showImport, showImportMnemonic);
 }
 
 /**
@@ -378,6 +379,13 @@ function showGenerate() {
  */
 function showImport() {
   showImportWalletScreen(app, showWelcome, handleImportWallet);
+}
+
+/**
+ * Show import wallet from mnemonic screen
+ */
+function showImportMnemonic() {
+  showImportMnemonicScreen(app, showWelcome, handleImportMnemonic);
 }
 
 /**
@@ -526,6 +534,25 @@ async function handleGenerateWallet(password: string, confirmPassword: string): 
  */
 async function handleImportWallet(privateKey: string, password: string, confirmPassword: string): Promise<void> {
   await api.importWallet(privateKey, password);
+
+  // Auto-unlock with the password user just entered
+  await api.unlockWallet(password);
+
+  // Notify background that wallet is unlocked
+  await api.notifyWalletUnlocked();
+
+  isUnlocked = true;
+
+  // Show wallet directly
+  await showWallet();
+  showSuccessMessage(`${ICONS.party} ${t('walletImportedSuccessfully')}`, 2000);
+}
+
+/**
+ * Handle import wallet from mnemonic
+ */
+async function handleImportMnemonic(mnemonic: string, password: string, confirmPassword: string): Promise<void> {
+  await api.importWalletFromMnemonic(mnemonic, password);
 
   // Auto-unlock with the password user just entered
   await api.unlockWallet(password);

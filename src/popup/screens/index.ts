@@ -2,6 +2,7 @@
 export { showWelcomeScreen } from './welcome';
 export { showGenerateWalletScreen } from './generate-wallet';
 export { showImportWalletScreen } from './import-wallet';
+export { showImportMnemonicScreen } from './import-mnemonic';
 export { showUnlockScreen, type UnlockContext } from './unlock';
 export { showWalletScreen, getCurrentBalance, getCurrentAddress, initWalletData } from './wallet';
 export { showSendScreen } from './send';

@@ -16,9 +16,11 @@
   "author": "Andrei Kliubchenko",
   "license": "MIT",
   "dependencies": {
+    "bip39": "^3.1.0",
     "buffer": "^6.0.3",
     "crypto-js": "^4.2.0",
-    "hoosat-sdk-web": "^0.1.6"
+    "hoosat-sdk-web": "^0.1.6",
+    "@scure/bip32": "^1.4.0"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.268",

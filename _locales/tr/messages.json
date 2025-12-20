@@ -409,10 +409,6 @@
     "message": "Emin misiniz? Bu cüzdanınızı silecektir. Özel anahtarınızı yedeklediğinizden emin olun!",
     "description": "Reset wallet confirmation message"
   },
-  "cancel": {
-    "message": "İptal",
-    "description": "Cancel button"
-  },
   "confirm": {
     "message": "Onayla",
     "description": "Confirm button"
@@ -457,7 +453,7 @@
   },
   "justNow": {
     "message": "şimdi",
-    "description": "Just now time"
+    "description": "Time ago: just now"
   },
   "minuteAgo": {
     "message": "$1 dakika önce",
@@ -471,7 +467,7 @@
   },
   "minutesAgo": {
     "message": "$1 dakika önce",
-    "description": "Minutes ago time",
+    "description": "Time ago: minutes",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -491,7 +487,7 @@
   },
   "hoursAgo": {
     "message": "$1 saat önce",
-    "description": "Hours ago time",
+    "description": "Time ago: hours",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -1097,28 +1093,36 @@
     "message": "Bu site bir mesajı imzalamanızı istiyor. İncelemek ve imzalamak için kilidi açın.",
     "description": "Unlock screen message for message signing"
   },
-  "justNow": {
-    "message": "şimdi",
-    "description": "Time ago: just now"
+  "importMnemonicWalletDesc": {
+    "message": "Import from mnemonic",
+    "description": "Import from mnemonic description"
   },
-  "minutesAgo": {
-    "message": "$1 dakika önce",
-    "description": "Time ago: minutes",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "5"
-      }
-    }
+  "importMnemonicTitle": {
+    "message": "Import from Mnemonic",
+    "description": "Import wallet from mnemonic title"
   },
-  "hoursAgo": {
-    "message": "$1 saat önce",
-    "description": "Time ago: hours",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "2"
-      }
-    }
+  "mnemonicPhrase": {
+    "message": "Mnemonic Phrase",
+    "description": "Mnemonic phrase label"
+  },
+  "enterMnemonicPhrase": {
+    "message": "Enter 12 or 24 words",
+    "description": "Mnemonic phrase placeholder"
+  },
+  "mnemonicRequired": {
+    "message": "Mnemonic is required",
+    "description": "Mnemonic required error"
+  },
+  "invalidMnemonic": {
+    "message": "Invalid mnemonic phrase",
+    "description": "Invalid mnemonic error"
+  },
+  "importing": {
+    "message": "Importing...",
+    "description": "Importing status"
+  },
+  "languageBulgarian": {
+    "message": "Български (Bulgarian)",
+    "description": "Bulgarian language name"
   }
 }

@@ -409,10 +409,6 @@
     "message": "您确定吗？这将删除您的钱包。请确保您已备份私钥！",
     "description": "Reset wallet confirmation message"
   },
-  "cancel": {
-    "message": "取消",
-    "description": "Cancel button"
-  },
   "confirm": {
     "message": "确认",
     "description": "Confirm button"
@@ -457,7 +453,7 @@
   },
   "justNow": {
     "message": "刚刚",
-    "description": "Just now time"
+    "description": "Time ago: just now"
   },
   "minuteAgo": {
     "message": "$1 分钟前",
@@ -470,8 +466,8 @@
     }
   },
   "minutesAgo": {
-    "message": "$1 分钟前",
-    "description": "Minutes ago time",
+    "message": "$1分钟前",
+    "description": "Time ago: minutes",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -490,8 +486,8 @@
     }
   },
   "hoursAgo": {
-    "message": "$1 小时前",
-    "description": "Hours ago time",
+    "message": "$1小时前",
+    "description": "Time ago: hours",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -1097,28 +1093,36 @@
     "message": "此网站希望您签署消息。解锁以查看和签署。",
     "description": "Unlock screen message for message signing"
   },
-  "justNow": {
-    "message": "刚刚",
-    "description": "Time ago: just now"
+  "importMnemonicWalletDesc": {
+    "message": "Import from mnemonic",
+    "description": "Import from mnemonic description"
   },
-  "minutesAgo": {
-    "message": "$1分钟前",
-    "description": "Time ago: minutes",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "5"
-      }
-    }
+  "importMnemonicTitle": {
+    "message": "Import from Mnemonic",
+    "description": "Import wallet from mnemonic title"
   },
-  "hoursAgo": {
-    "message": "$1小时前",
-    "description": "Time ago: hours",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "2"
-      }
-    }
+  "mnemonicPhrase": {
+    "message": "Mnemonic Phrase",
+    "description": "Mnemonic phrase label"
+  },
+  "enterMnemonicPhrase": {
+    "message": "Enter 12 or 24 words",
+    "description": "Mnemonic phrase placeholder"
+  },
+  "mnemonicRequired": {
+    "message": "Mnemonic is required",
+    "description": "Mnemonic required error"
+  },
+  "invalidMnemonic": {
+    "message": "Invalid mnemonic phrase",
+    "description": "Invalid mnemonic error"
+  },
+  "importing": {
+    "message": "Importing...",
+    "description": "Importing status"
+  },
+  "languageBulgarian": {
+    "message": "Български (Bulgarian)",
+    "description": "Bulgarian language name"
   }
 }

@@ -33,6 +33,7 @@ Hoosat Wallet is a powerful browser extension that allows you to securely manage
 ### 💼 Wallet Management
 - **Create Wallet** - Generate new wallets with secure random keys
 - **Import Wallet** - Import existing wallets via private key
+- **Import from Mnemonic** - Restore wallets using 12 or 24 word phrases
 - **Password Management** - Change password with validation
 - **Private Key Export** - Secure key backup with password verification
 
@@ -64,9 +65,9 @@ Hoosat Wallet is a powerful browser extension that allows you to securely manage
 - **Loading States** - Clear indication of ongoing operations
 - **Error Handling** - User-friendly error messages
 - **Responsive Design** - Works seamlessly in popup window
-- **Multi-language Support** - Available in 9 languages:
+- **Multi-language Support** - Available in 10 languages:
   - English, Russian, Chinese (Simplified), Spanish, Finnish
-  - Japanese, Korean, Turkish, German
+  - Japanese, Korean, Turkish, German, Bulgarian
 - **Language Switcher** - Change language in Settings without reload
 
 ## 🚀 Installation
@@ -450,6 +451,21 @@ The project includes a comprehensive test DApp that demonstrates all features:
 - ✅ Edge cases (special characters, empty messages, etc.)
 
 Open `test-dapp.html` in your browser to test all functionality.
+
+### 🐞 Debugging from VS Code
+
+You can run and debug the extension directly from VS Code while working inside WSL.
+
+1. Run the `webpack: build` task (`Terminal > Run Task…`) to populate `dist/` before debugging; the Webpack config now emits `cheap-module-source-map` when `npm run dev` is run manually, so you can also start the `webpack: watch` task in another terminal if you want live recompilation while you interact with the extension.
+2. Open the Run and Debug panel (`Ctrl+Shift+D`) and pick `Chrome: Debug Hoosat extension`. The launch configuration:
+   * Starts Windows Chrome with a clean profile (`userDataDir` points to `%TEMP%\hoosat-vscode-profile`).
+   * Enables remote debugging on port `9222`.
+   * Loads your built extension from `\\wsl$\<distro>\home\<user>\hoosat-web-extension\dist`—adjust the path or set `${env:WSL_DISTRO_NAME}`/`${env:USER}` if you use a different distro or account.
+   * Opens `chrome://extensions/` so you can enable **Developer mode**, keep the “Hoosat Wallet” extension loaded, and inspect its service worker via the “Service worker” link.
+3. With the extension loaded, use Chrome DevTools (triggered from VS Code via the launch config or manually from `chrome://extensions`) to inspect the service worker, popup, and content scripts, set breakpoints, and step through your TypeScript (source maps map you back to `src/`).
+4. If Chrome launches from a different location on your machine, edit `.vscode/launch.json` to update `runtimeExecutable`. If you need a different extension folder, update the `--load-extension` argument accordingly.
+
+Reload the extension page after each rebuild. If you rely on `webpack: watch` for live updates, keep that task running in a separate terminal and reload Chrome after the watcher finishes a rebuild; otherwise rerun `webpack: build` before debugging to produce the latest `dist/` assets. When the service worker is active, VS Code’s debugger can pause inside `background.ts` or any module you attach to.
 
 ## 📝 License
 
