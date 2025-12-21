@@ -4,6 +4,7 @@ import { DEFAULT_NODE_URL, DEFAULT_NETWORK, SOMPI_PER_HTN } from '../shared/cons
 import type { Network } from '../shared/constants';
 import type { UnlockedWallet, FeeEstimate } from '../shared/types';
 import { DEFAULT_CONSOLIDATION_THRESHOLD } from '../shared/types';
+import { schnorr } from '@noble/curves/secp256k1';
 import { HoosatTxBuilder, HoosatUtils, HoosatWebClient, HoosatCrypto, HoosatSigner } from 'hoosat-sdk-web';
 
 export class WalletManager {
@@ -30,6 +31,34 @@ export class WalletManager {
   private getNodePort(): number {
     const url = new URL(DEFAULT_NODE_URL);
     return parseInt(url.port) || 42420;
+  }
+
+  private signTransactionWithWalletKey(txBuilder: HoosatTxBuilder, utxos: any[]): any {
+    const addressType = HoosatUtils.getAddressType(this.unlockedWallet?.address || '');
+
+    if (addressType !== 'schnorr') {
+      return txBuilder.sign();
+    }
+
+    const unsignedTx = txBuilder.build();
+    const reusedValues: Record<string, Buffer> = {};
+    const sigHashType = 1; // SIGHASH_ALL
+
+    for (let index = 0; index < utxos.length; index++) {
+      const utxo = utxos[index];
+      const hash = (HoosatCrypto as any).getSignatureHashSchnorr(unsignedTx, index, utxo, reusedValues);
+      const signature = Buffer.from(schnorr.sign(hash, this.unlockedWallet!.privateKey));
+      const sigWithHashType = Buffer.concat([signature, Buffer.from([sigHashType])]);
+      const scriptSig = Buffer.concat([Buffer.from([sigWithHashType.length]), sigWithHashType]);
+
+      unsignedTx.inputs[index].signatureScript = scriptSig.toString('hex');
+    }
+
+    unsignedTx.inputs.forEach((input: any) => {
+      delete input.utxoEntry;
+    });
+
+    return unsignedTx;
   }
 
   /**
@@ -257,35 +286,68 @@ export class WalletManager {
       console.log('💰 Total available:', totalAvailable.toString(), 'sompi');
       console.log('📊 UTXOs count:', utxos.length);
 
-      // Use custom fee or calculate with payload size
-      const numInputs = utxos.length;
+      // Select only as many UTXOs as needed to cover amount + fee
       const numOutputs = 2; // recipient + change
-      const txFee = params.fee || await this.calculateMinFee({
-        inputs: numInputs,
-        outputs: numOutputs,
-        payloadSize: payloadSize,
+      const sortedUtxos = [...utxos].sort((a, b) => {
+        const aAmount = BigInt(a.utxoEntry.amount);
+        const bAmount = BigInt(b.utxoEntry.amount);
+        if (aAmount === bAmount) {
+          return 0;
+        }
+        return aAmount > bAmount ? -1 : 1;
       });
 
+      const selectedUtxos: typeof utxos = [];
+      let selectedTotal = 0n;
+      let txFee: string | undefined = params.fee;
+
+      for (const utxo of sortedUtxos) {
+        selectedUtxos.push(utxo);
+        selectedTotal += BigInt(utxo.utxoEntry.amount);
+
+        if (!params.fee) {
+          txFee = await this.calculateMinFee({
+            inputs: selectedUtxos.length,
+            outputs: numOutputs,
+            payloadSize: payloadSize,
+          });
+        }
+
+        const totalRequired = BigInt(amountSompi) + BigInt(txFee!);
+        if (selectedTotal >= totalRequired) {
+          break;
+        }
+      }
+
+      if (!txFee) {
+        txFee = await this.calculateMinFee({
+          inputs: selectedUtxos.length,
+          outputs: numOutputs,
+          payloadSize: payloadSize,
+        });
+      }
+
       console.log('💵 Transaction fee:', txFee, 'sompi', params.fee ? '(custom)' : '(auto)');
+      console.log('📊 Selected inputs:', selectedUtxos.length);
 
       // Check if we have enough funds (amount + fee)
       const totalRequired = BigInt(amountSompi) + BigInt(txFee);
 
-      if (totalAvailable < totalRequired) {
+      if (selectedTotal < totalRequired) {
         throw new Error(
           `Insufficient funds. Available: ${totalAvailable} sompi, Required: ${totalRequired} sompi (${amountSompi} + ${txFee} fee)`
         );
       }
 
       // Calculate change
-      const change = totalAvailable - totalRequired;
+      const change = selectedTotal - totalRequired;
       console.log('💵 Change:', change.toString(), 'sompi');
 
       // Build transaction
       const txBuilder = new HoosatTxBuilder({ debug: false });
 
       // Add inputs with private key
-      for (const utxo of utxos) {
+      for (const utxo of selectedUtxos) {
         txBuilder.addInput(utxo, this.unlockedWallet.privateKey);
       }
 
@@ -316,7 +378,7 @@ export class WalletManager {
 
       // Sign transaction
       console.log('✍️ Signing transaction...');
-      const signedTx = txBuilder.sign();
+      const signedTx = this.signTransactionWithWalletKey(txBuilder, selectedUtxos);
 
       // Submit transaction
       console.log('📤 Submitting transaction...');
@@ -484,7 +546,7 @@ export class WalletManager {
         txBuilder.setFee(fee);
 
         // Sign transaction
-        const signedTx = txBuilder.sign();
+        const signedTx = this.signTransactionWithWalletKey(txBuilder, batchUtxos);
 
         // Submit transaction
         const result = await this.client.submitTransaction(signedTx);

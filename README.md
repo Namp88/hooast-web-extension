@@ -41,6 +41,7 @@ Hoosat Wallet is a powerful browser extension that allows you to securely manage
 - **Send HTN** - Easy transaction creation with fee customization
 - **Receive HTN** - Generate QR codes for receiving payments
 - **Fee Estimation** - Automatic and manual fee control
+- **UTXO Selection** - Uses only required inputs to avoid oversized transactions
 - **Balance Display** - Real-time balance updates
 - **Custom Fees** - Adjust transaction fees (with warnings for high fees)
 - **UTXO Consolidation** - Smart UTXO management to reduce transaction fees
