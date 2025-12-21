@@ -81,7 +81,7 @@ Hoosat Wallet is a powerful browser extension that allows you to securely manage
 
 ### Manual Installation (Developer Mode)
 
-1. Download the latest release from [Releases](https://github.com/Namp88/hoosat-web-extension/releases)
+1. Download the latest release from [Releases](https://github.com/nushypool/hoosat-web-extension/releases)
 2. Extract the ZIP file
 3. Open Chrome and navigate to `chrome://extensions/`
 4. Enable "Developer mode" (top right corner)
@@ -100,7 +100,7 @@ Hoosat Wallet is a powerful browser extension that allows you to securely manage
 
 ```bash
 # Clone repository
-git clone https://github.com/Namp88/hoosat-web-extension.git
+git clone https://github.com/nushypool/hoosat-web-extension.git
 cd hoosat-web-extension
 
 # Install dependencies
@@ -481,8 +481,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-- **GitHub Issues**: [Report a bug](https://github.com/Namp88/hoosat-web-extension/issues)
-- **Documentation**: [Wiki](https://github.com/Namp88/hoosat-web-extension/wiki)
+- **GitHub Issues**: [Report a bug](https://github.com/nushypool/hoosat-web-extension/issues)
+- **Documentation**: [Wiki](https://github.com/nushypool/hoosat-web-extension/wiki)
 - **Hoosat Community**: [Discord](https://discord.gg/hoosat) | [Telegram](https://t.me/hoosat)
 
 ## 🤝 Contributing
@@ -513,6 +513,6 @@ This wallet is provided "as is" without warranty of any kind. Always do your own
 
 Made with ❤️ for the Hoosat community
 
-**Version 0.3.4** | [Changelog](CHANGELOG.md) | [GitHub](https://github.com/Namp88/hoosat-web-extension)
+**Version 0.3.4** | [Changelog](CHANGELOG.md) | [GitHub](https://github.com/nushypool/hoosat-web-extension)
 
 </div>
