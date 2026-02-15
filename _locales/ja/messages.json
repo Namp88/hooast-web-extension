@@ -409,10 +409,6 @@
     "message": "本当によろしいですか？これによりウォレットが削除されます。秘密鍵をバックアップしていることを確認してください！",
     "description": "Reset wallet confirmation message"
   },
-  "cancel": {
-    "message": "キャンセル",
-    "description": "Cancel button"
-  },
   "confirm": {
     "message": "確認",
     "description": "Confirm button"
@@ -457,7 +453,7 @@
   },
   "justNow": {
     "message": "たった今",
-    "description": "Just now time"
+    "description": "Time ago: just now"
   },
   "minuteAgo": {
     "message": "$1分前",
@@ -471,7 +467,7 @@
   },
   "minutesAgo": {
     "message": "$1分前",
-    "description": "Minutes ago time",
+    "description": "Time ago: minutes",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -491,7 +487,7 @@
   },
   "hoursAgo": {
     "message": "$1時間前",
-    "description": "Hours ago time",
+    "description": "Time ago: hours",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -1097,28 +1093,36 @@
     "message": "このサイトがメッセージへの署名を要求しています。ロックを解除して確認および署名してください。",
     "description": "Unlock screen message for message signing"
   },
-  "justNow": {
-    "message": "たった今",
-    "description": "Time ago: just now"
+  "importMnemonicWalletDesc": {
+    "message": "Import from mnemonic",
+    "description": "Import from mnemonic description"
   },
-  "minutesAgo": {
-    "message": "$1分前",
-    "description": "Time ago: minutes",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "5"
-      }
-    }
+  "importMnemonicTitle": {
+    "message": "Import from Mnemonic",
+    "description": "Import wallet from mnemonic title"
   },
-  "hoursAgo": {
-    "message": "$1時間前",
-    "description": "Time ago: hours",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "2"
-      }
-    }
+  "mnemonicPhrase": {
+    "message": "Mnemonic Phrase",
+    "description": "Mnemonic phrase label"
+  },
+  "enterMnemonicPhrase": {
+    "message": "Enter 12 or 24 words",
+    "description": "Mnemonic phrase placeholder"
+  },
+  "mnemonicRequired": {
+    "message": "Mnemonic is required",
+    "description": "Mnemonic required error"
+  },
+  "invalidMnemonic": {
+    "message": "Invalid mnemonic phrase",
+    "description": "Invalid mnemonic error"
+  },
+  "importing": {
+    "message": "Importing...",
+    "description": "Importing status"
+  },
+  "languageBulgarian": {
+    "message": "Български (Bulgarian)",
+    "description": "Bulgarian language name"
   }
 }

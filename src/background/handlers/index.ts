@@ -2,6 +2,7 @@
 export {
   handleGenerateWallet,
   handleImportWallet,
+  handleImportWalletFromMnemonic,
   handleUnlockWallet,
   handleLockWallet,
   handleResetWallet,

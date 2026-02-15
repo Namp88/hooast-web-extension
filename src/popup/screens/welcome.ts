@@ -7,7 +7,8 @@ import { ICONS } from '../utils/icons';
 export function showWelcomeScreen(
   app: HTMLElement,
   onCreateNew: () => void,
-  onImport: () => void
+  onImport: () => void,
+  onImportMnemonic: () => void
 ): void {
   app.innerHTML = `
     <div class="welcome-hero">
@@ -54,6 +55,15 @@ export function showWelcomeScreen(
             </div>
             <div class="welcome-option-arrow">${ICONS.chevronRight}</div>
           </button>
+
+          <button id="importMnemonicBtn" class="welcome-option-btn">
+            <div class="welcome-option-icon">${ICONS.key}</div>
+            <div class="welcome-option-content">
+              <div class="welcome-option-title">${t('importExistingWallet')}</div>
+              <div class="welcome-option-desc">${t('importMnemonicWalletDesc')}</div>
+            </div>
+            <div class="welcome-option-arrow">${ICONS.chevronRight}</div>
+          </button>
         </div>
       </div>
     </div>
@@ -61,4 +71,5 @@ export function showWelcomeScreen(
 
   document.getElementById('createNewBtn')!.addEventListener('click', onCreateNew);
   document.getElementById('importBtn')!.addEventListener('click', onImport);
+  document.getElementById('importMnemonicBtn')!.addEventListener('click', onImportMnemonic);
 }

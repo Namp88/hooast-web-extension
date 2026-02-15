@@ -32,6 +32,10 @@
     "message": "Use your private key",
     "description": "Import wallet description"
   },
+  "importMnemonicWalletDesc": {
+    "message": "Import from mnemonic",
+    "description": "Import from mnemonic description"
+  },
 
   "unlockWallet": {
     "message": "Unlock Wallet",
@@ -139,6 +143,18 @@
     "message": "Private Key (hex)",
     "description": "Private key field label"
   },
+  "importMnemonicTitle": {
+    "message": "Import from Mnemonic",
+    "description": "Import wallet from mnemonic title"
+  },
+  "mnemonicPhrase": {
+    "message": "Mnemonic Phrase",
+    "description": "Mnemonic phrase label"
+  },
+  "enterMnemonicPhrase": {
+    "message": "Enter 12 or 24 words",
+    "description": "Mnemonic phrase placeholder"
+  },
   "enterPrivateKey": {
     "message": "Enter your private key",
     "description": "Private key field placeholder"
@@ -151,9 +167,21 @@
     "message": "Private key is required",
     "description": "Private key required error"
   },
+  "mnemonicRequired": {
+    "message": "Mnemonic is required",
+    "description": "Mnemonic required error"
+  },
+  "invalidMnemonic": {
+    "message": "Invalid mnemonic phrase",
+    "description": "Invalid mnemonic error"
+  },
   "failedToImportWallet": {
     "message": "Failed to import wallet",
     "description": "Failed to import wallet error"
+  },
+  "importing": {
+    "message": "Importing...",
+    "description": "Importing status"
   },
 
   "backupPrivateKey": {
@@ -743,6 +771,10 @@
   "languageGerman": {
     "message": "Deutsch (German)",
     "description": "German language name"
+  },
+  "languageBulgarian": {
+    "message": "Български (Bulgarian)",
+    "description": "Bulgarian language name"
   },
   "failedToChangeLanguage": {
     "message": "Failed to change language",

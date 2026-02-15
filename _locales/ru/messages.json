@@ -7,7 +7,6 @@
     "message": "Расширение-кошелёк для браузера для блокчейна Hoosat",
     "description": "Application description"
   },
-
   "welcome": {
     "message": "Добро пожаловать!",
     "description": "Welcome screen title"
@@ -32,7 +31,6 @@
     "message": "Использовать приватный ключ",
     "description": "Import wallet description"
   },
-
   "unlockWallet": {
     "message": "Разблокировать кошелёк",
     "description": "Unlock wallet title"
@@ -69,7 +67,6 @@
     "message": "Неверный пароль",
     "description": "Invalid password error"
   },
-
   "createNewWalletTitle": {
     "message": "Создать новый кошелёк",
     "description": "Create new wallet screen title"
@@ -130,7 +127,6 @@
     "message": "Не удалось создать кошелёк",
     "description": "Failed to generate wallet error"
   },
-
   "importWallet": {
     "message": "Импорт кошелька",
     "description": "Import wallet title"
@@ -155,7 +151,6 @@
     "message": "Не удалось импортировать кошелёк",
     "description": "Failed to import wallet error"
   },
-
   "backupPrivateKey": {
     "message": "Резервная копия приватного ключа",
     "description": "Backup private key title"
@@ -192,7 +187,6 @@
     "message": "Продолжить",
     "description": "Continue button"
   },
-
   "address": {
     "message": "Адрес",
     "description": "Address label"
@@ -237,7 +231,6 @@
     "message": "От:",
     "description": "From label"
   },
-
   "sendHTN": {
     "message": "Отправить HTN",
     "description": "Send HTN title"
@@ -296,7 +289,6 @@
     "message": "Транзакция не удалась",
     "description": "Transaction failed error"
   },
-
   "receiveHTN": {
     "message": "Получить HTN",
     "description": "Receive HTN title"
@@ -305,7 +297,6 @@
     "message": "Скопировать адрес",
     "description": "Copy address button"
   },
-
   "confirmTransaction": {
     "message": "Подтвердите транзакцию",
     "description": "Confirm transaction title"
@@ -390,7 +381,6 @@
     "message": "Подтвердить и отправить",
     "description": "Confirm and send button"
   },
-
   "settings": {
     "message": "Настройки",
     "description": "Settings title"
@@ -419,15 +409,10 @@
     "message": "Вы уверены? Это удалит ваш кошелёк. Убедитесь, что вы сохранили свой приватный ключ!",
     "description": "Reset wallet confirmation message"
   },
-  "cancel": {
-    "message": "Отмена",
-    "description": "Cancel button"
-  },
   "confirm": {
     "message": "Подтвердить",
     "description": "Confirm button"
   },
-
   "connectedSitesTitle": {
     "message": "Подключённые сайты",
     "description": "Connected sites screen title"
@@ -468,7 +453,7 @@
   },
   "justNow": {
     "message": "только что",
-    "description": "Just now time"
+    "description": "Time ago: just now"
   },
   "minuteAgo": {
     "message": "$1 минуту назад",
@@ -481,8 +466,8 @@
     }
   },
   "minutesAgo": {
-    "message": "$1 минут назад",
-    "description": "Minutes ago time",
+    "message": "$1 минуту назад|$1 минуты назад|$1 минут назад",
+    "description": "Time ago: minutes",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -501,8 +486,8 @@
     }
   },
   "hoursAgo": {
-    "message": "$1 часов назад",
-    "description": "Hours ago time",
+    "message": "$1 час назад|$1 часа назад|$1 часов назад",
+    "description": "Time ago: hours",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -530,7 +515,6 @@
       }
     }
   },
-
   "changePasswordTitle": {
     "message": "Изменить пароль",
     "description": "Change password screen title"
@@ -613,7 +597,6 @@
     "message": "Надёжный пароль",
     "description": "Strong password indicator"
   },
-
   "exportPrivateKeyTitle": {
     "message": "Экспорт приватного ключа",
     "description": "Export private key screen title"
@@ -682,12 +665,10 @@
     "message": "Готово",
     "description": "Done button"
   },
-
   "loading": {
     "message": "Загрузка...",
     "description": "Loading text"
   },
-
   "language": {
     "message": "Язык",
     "description": "Language label"
@@ -893,8 +874,14 @@
     "description": "Consolidate UTXOs"
   },
   "autoConsolidateWhen": {
-    "message": "Автоконсолидация при > 30 UTXO",
-    "description": "Auto-consolidate when > 30 UTXOs"
+    "message": "Автоконсолидация при > $1 UTXO",
+    "description": "Auto-consolidate threshold setting",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "30"
+      }
+    }
   },
   "consolidationFailed": {
     "message": "Консолидация не удалась",
@@ -932,7 +919,6 @@
     "message": "Ошибка",
     "description": "Error title"
   },
-
   "connectionRequest": {
     "message": "Запрос на подключение",
     "description": "DApp connection request title"
@@ -997,7 +983,6 @@
     "message": "Не удалось отклонить подключение",
     "description": "Error: failed to reject connection"
   },
-
   "signMessage": {
     "message": "Подписать сообщение",
     "description": "Sign message title"
@@ -1042,7 +1027,6 @@
     "message": "Не удалось отклонить",
     "description": "Error: failed to reject"
   },
-
   "welcomeBack": {
     "message": "С возвращением!",
     "description": "Welcome back message"
@@ -1103,16 +1087,6 @@
     "message": "Вернуться к кошельку",
     "description": "Back to wallet button"
   },
-  "autoConsolidateWhen": {
-    "message": "Автоконсолидация при > $1 UTXO",
-    "description": "Auto-consolidate threshold setting",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "30"
-      }
-    }
-  },
   "qrCodeGenerationFailed": {
     "message": "Не удалось сгенерировать QR-код",
     "description": "QR code generation failed error message"
@@ -1145,28 +1119,36 @@
     "message": "Этот сайт хочет, чтобы вы подписали сообщение. Разблокируйте для проверки и подписи.",
     "description": "Unlock screen message for message signing"
   },
-  "justNow": {
-    "message": "только что",
-    "description": "Time ago: just now"
+  "importMnemonicWalletDesc": {
+    "message": "Import from mnemonic",
+    "description": "Import from mnemonic description"
   },
-  "minutesAgo": {
-    "message": "$1 минуту назад|$1 минуты назад|$1 минут назад",
-    "description": "Time ago: minutes",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "5"
-      }
-    }
+  "importMnemonicTitle": {
+    "message": "Import from Mnemonic",
+    "description": "Import wallet from mnemonic title"
   },
-  "hoursAgo": {
-    "message": "$1 час назад|$1 часа назад|$1 часов назад",
-    "description": "Time ago: hours",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "2"
-      }
-    }
+  "mnemonicPhrase": {
+    "message": "Mnemonic Phrase",
+    "description": "Mnemonic phrase label"
+  },
+  "enterMnemonicPhrase": {
+    "message": "Enter 12 or 24 words",
+    "description": "Mnemonic phrase placeholder"
+  },
+  "mnemonicRequired": {
+    "message": "Mnemonic is required",
+    "description": "Mnemonic required error"
+  },
+  "invalidMnemonic": {
+    "message": "Invalid mnemonic phrase",
+    "description": "Invalid mnemonic error"
+  },
+  "importing": {
+    "message": "Importing...",
+    "description": "Importing status"
+  },
+  "languageBulgarian": {
+    "message": "Български (Bulgarian)",
+    "description": "Bulgarian language name"
   }
 }

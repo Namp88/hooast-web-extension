@@ -1,0 +1,1154 @@
+{
+  "appName": {
+    "message": "Hoosat Wallet",
+    "description": "Описание: Hoosat Wallet"
+  },
+  "appDescription": {
+    "message": "Портфейл разширение за браузър за блокчейна Hoosat",
+    "description": "Описание: Портфейл разширение за браузър за блокчейна Hoosat"
+  },
+  "welcome": {
+    "message": "Добре дошли!",
+    "description": "Заглавие: Добре дошли!"
+  },
+  "welcomeDescription": {
+    "message": "Изберете как да започнете",
+    "description": "Описание: Изберете как да започнете"
+  },
+  "createNewWallet": {
+    "message": "Създаване на нов портфейл",
+    "description": "Бутон: Създаване на нов портфейл"
+  },
+  "createNewWalletDesc": {
+    "message": "Генерирайте нов портфейл",
+    "description": "Описание: Генерирайте нов портфейл"
+  },
+  "importExistingWallet": {
+    "message": "Импортиране на съществуващ портфейл",
+    "description": "Бутон: Импортиране на съществуващ портфейл"
+  },
+  "importExistingWalletDesc": {
+    "message": "Използвайте личния си ключ",
+    "description": "Описание: Използвайте личния си ключ"
+  },
+  "importMnemonicWalletDesc": {
+    "message": "Импорт от мнемоника",
+    "description": "Описание: Импорт от мнемоника"
+  },
+  "unlockWallet": {
+    "message": "Отключване на портфейла",
+    "description": "Заглавие: Отключване на портфейла"
+  },
+  "requestFrom": {
+    "message": "Заявка от:",
+    "description": "Етикет: Заявка от:"
+  },
+  "password": {
+    "message": "Парола",
+    "description": "Етикет: Парола"
+  },
+  "enterPassword": {
+    "message": "Въведете парола",
+    "description": "Подсказка: Въведете парола"
+  },
+  "enterPasswordToUnlock": {
+    "message": "Въведете паролата си, за да отключите портфейла",
+    "description": "Заглавие: Въведете паролата си, за да отключите портфейла"
+  },
+  "walletLockedHint": {
+    "message": "Портфейлът ви е заключен за сигурност",
+    "description": "Съобщение: Портфейлът ви е заключен за сигурност"
+  },
+  "unlock": {
+    "message": "Отключи",
+    "description": "Бутон: Отключи"
+  },
+  "passwordRequired": {
+    "message": "Изисква се парола",
+    "description": "Грешка: Изисква се парола"
+  },
+  "invalidPassword": {
+    "message": "Невалидна парола",
+    "description": "Грешка: Невалидна парола"
+  },
+  "createNewWalletTitle": {
+    "message": "Създаване на нов портфейл",
+    "description": "Заглавие: Създаване на нов портфейл"
+  },
+  "important": {
+    "message": "Важно:",
+    "description": "Етикет: Важно:"
+  },
+  "savePrivateKeyWarning": {
+    "message": "Съхранявайте личния си ключ сигурно. Ще ви е нужен, за да възстановите портфейла си. Никога не го споделяйте с никого!",
+    "description": "Предупреждение: Съхранявайте личния си ключ сигурно. Ще ви е нужен, за да възстановите портфейла си. Никога не го споделяйте с никого!"
+  },
+  "createPassword": {
+    "message": "Създайте парола",
+    "description": "Подсказка: Създайте парола"
+  },
+  "confirmPassword": {
+    "message": "Потвърдете паролата",
+    "description": "Етикет: Потвърдете паролата"
+  },
+  "confirmPasswordPlaceholder": {
+    "message": "Потвърдете паролата",
+    "description": "Подсказка: Потвърдете паролата"
+  },
+  "passwordRequirements": {
+    "message": "Паролата трябва да съдържа:",
+    "description": "Заглавие: Паролата трябва да съдържа:"
+  },
+  "passwordReq8Chars": {
+    "message": "Поне 8 знака",
+    "description": "Описание: Поне 8 знака"
+  },
+  "passwordReqUppercase": {
+    "message": "Една главна буква (A-Z)",
+    "description": "Описание: Една главна буква (A-Z)"
+  },
+  "passwordReqLowercase": {
+    "message": "Една малка буква (a-z)",
+    "description": "Описание: Една малка буква (a-z)"
+  },
+  "passwordReqNumber": {
+    "message": "Една цифра (0-9)",
+    "description": "Описание: Една цифра (0-9)"
+  },
+  "generateWallet": {
+    "message": "Генерирай портфейл",
+    "description": "Бутон: Генерирай портфейл"
+  },
+  "passwordsDoNotMatch": {
+    "message": "Паролите не съвпадат",
+    "description": "Грешка: Паролите не съвпадат"
+  },
+  "passwordTooWeak": {
+    "message": "Паролата е твърде слаба.",
+    "description": "Грешка: Паролата е твърде слаба."
+  },
+  "failedToGenerateWallet": {
+    "message": "Неуспешно генериране на портфейл",
+    "description": "Грешка: Неуспешно генериране на портфейл"
+  },
+  "importWallet": {
+    "message": "Импортиране на портфейл",
+    "description": "Заглавие: Импортиране на портфейл"
+  },
+  "privateKeyHex": {
+    "message": "Личен ключ (hex)",
+    "description": "Етикет: Личен ключ (hex)"
+  },
+  "importMnemonicTitle": {
+    "message": "Импорт от мнемоника",
+    "description": "Заглавие: Импорт от мнемоника"
+  },
+  "mnemonicPhrase": {
+    "message": "Мнемонична фраза",
+    "description": "Етикет: Мнемонична фраза"
+  },
+  "enterMnemonicPhrase": {
+    "message": "Въведете 12 или 24 думи",
+    "description": "Подсказка: Въведете 12 или 24 думи"
+  },
+  "enterPrivateKey": {
+    "message": "Въведете личния си ключ",
+    "description": "Подсказка: Въведете личния си ключ"
+  },
+  "importWalletButton": {
+    "message": "Импортирай портфейл",
+    "description": "Бутон: Импортирай портфейл"
+  },
+  "privateKeyRequired": {
+    "message": "Изисква се личен ключ",
+    "description": "Грешка: Изисква се личен ключ"
+  },
+  "mnemonicRequired": {
+    "message": "Изисква се мнемонична фраза",
+    "description": "Грешка: Изисква се мнемонична фраза"
+  },
+  "invalidMnemonic": {
+    "message": "Невалидна мнемонична фраза",
+    "description": "Грешка: Невалидна мнемонична фраза"
+  },
+  "failedToImportWallet": {
+    "message": "Неуспешно импортиране на портфейл",
+    "description": "Грешка: Неуспешно импортиране на портфейл"
+  },
+  "importing": {
+    "message": "Импортиране...",
+    "description": "Състояние: Импортиране..."
+  },
+  "backupPrivateKey": {
+    "message": "Архивиране на личния ключ",
+    "description": "Заглавие: Архивиране на личния ключ"
+  },
+  "saveThisPrivateKey": {
+    "message": "Запазете този личен ключ!",
+    "description": "Заглавие: Запазете този личен ключ!"
+  },
+  "writeItDownWarning": {
+    "message": "Запишете го и го съхранявайте на безопасно място. Ще ви е нужен, за да възстановите портфейла си.",
+    "description": "Предупреждение: Запишете го и го съхранявайте на безопасно място. Ще ви е нужен, за да възстановите портфейла си."
+  },
+  "yourPrivateKey": {
+    "message": "Вашият личен ключ",
+    "description": "Етикет: Вашият личен ключ"
+  },
+  "yourAddress": {
+    "message": "Вашият адрес",
+    "description": "Етикет: Вашият адрес"
+  },
+  "copyToClipboard": {
+    "message": "Копирай в клипборда",
+    "description": "Бутон: Копирай в клипборда"
+  },
+  "copied": {
+    "message": "Копирано!",
+    "description": "Известие: Копирано!"
+  },
+  "confirmBackup": {
+    "message": "Запазих личния си ключ сигурно",
+    "description": "Отметка: Запазих личния си ключ сигурно"
+  },
+  "continue": {
+    "message": "Продължи",
+    "description": "Бутон: Продължи"
+  },
+  "address": {
+    "message": "Адрес",
+    "description": "Етикет: Адрес"
+  },
+  "balance": {
+    "message": "Баланс",
+    "description": "Етикет: Баланс"
+  },
+  "send": {
+    "message": "Изпрати",
+    "description": "Бутон: Изпрати"
+  },
+  "receive": {
+    "message": "Получи",
+    "description": "Бутон: Получи"
+  },
+  "recentTransactions": {
+    "message": "Последни транзакции",
+    "description": "Заглавие: Последни транзакции"
+  },
+  "noTransactionsYet": {
+    "message": "Все още няма транзакции",
+    "description": "Съобщение: Все още няма транзакции"
+  },
+  "viewFullHistoryInExplorer": {
+    "message": "Виж пълната история в Explorer →",
+    "description": "Връзка: Виж пълната история в Explorer →"
+  },
+  "sent": {
+    "message": "Изпратено",
+    "description": "Описание: Изпратено"
+  },
+  "received": {
+    "message": "Получено",
+    "description": "Описание: Получено"
+  },
+  "to": {
+    "message": "До:",
+    "description": "Етикет: До:"
+  },
+  "from": {
+    "message": "От:",
+    "description": "Етикет: От:"
+  },
+  "sendHTN": {
+    "message": "Изпрати HTN",
+    "description": "Заглавие: Изпрати HTN"
+  },
+  "recipientAddress": {
+    "message": "Адрес на получателя",
+    "description": "Етикет: Адрес на получателя"
+  },
+  "amount": {
+    "message": "Сума (HTN)",
+    "description": "Етикет: Сума (HTN)"
+  },
+  "available": {
+    "message": "Налично:",
+    "description": "Етикет: Налично:"
+  },
+  "sendTransaction": {
+    "message": "Изпрати транзакция",
+    "description": "Бутон: Изпрати транзакция"
+  },
+  "recipientAndAmountRequired": {
+    "message": "Адресът на получателя и сумата са задължителни",
+    "description": "Грешка: Адресът на получателя и сумата са задължителни"
+  },
+  "invalidAddressFormat": {
+    "message": "Невалиден формат на адреса. Трябва да започва с \"hoosat:\"",
+    "description": "Грешка: Невалиден формат на адреса. Трябва да започва с \"hoosat:\""
+  },
+  "invalidAmount": {
+    "message": "Невалидна сума",
+    "description": "Грешка: Невалидна сума"
+  },
+  "estimatingFee": {
+    "message": "Изчисляване на такса...",
+    "description": "Състояние: Изчисляване на такса..."
+  },
+  "insufficientBalance": {
+    "message": "Недостатъчен баланс. Нужни са $1 HTN (включително такса $2 HTN)",
+    "description": "Грешка: Недостатъчен баланс. Нужни са $1 HTN (включително такса $2 HTN)",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1.00000000"
+      },
+      "2": {
+        "content": "$2",
+        "example": "0.00001000"
+      }
+    }
+  },
+  "sending": {
+    "message": "Изпращане...",
+    "description": "Състояние: Изпращане..."
+  },
+  "transactionFailed": {
+    "message": "Транзакцията не успя",
+    "description": "Грешка: Транзакцията не успя"
+  },
+  "receiveHTN": {
+    "message": "Получи HTN",
+    "description": "Заглавие: Получи HTN"
+  },
+  "copyAddress": {
+    "message": "Копирай адрес",
+    "description": "Бутон: Копирай адрес"
+  },
+  "confirmTransaction": {
+    "message": "Потвърди транзакцията",
+    "description": "Заглавие: Потвърди транзакцията"
+  },
+  "requestedBy": {
+    "message": "Заявено от:",
+    "description": "Етикет: Заявено от:"
+  },
+  "requested": {
+    "message": "Заявено",
+    "description": "Префикс: Заявено"
+  },
+  "oldRequest": {
+    "message": "Стара заявка",
+    "description": "Предупреждение: Стара заявка"
+  },
+  "sendingTo": {
+    "message": "Изпращане към",
+    "description": "Етикет: Изпращане към"
+  },
+  "networkFee": {
+    "message": "Мрежова такса",
+    "description": "Етикет: Мрежова такса"
+  },
+  "custom": {
+    "message": "Персонализирана",
+    "description": "Значка: Персонализирана"
+  },
+  "editFee": {
+    "message": "Редактирай таксата",
+    "description": "Връзка: Редактирай таксата"
+  },
+  "minimum": {
+    "message": "Минимум:",
+    "description": "Етикет: Минимум:"
+  },
+  "cancel": {
+    "message": "Отказ",
+    "description": "Бутон: Отказ"
+  },
+  "save": {
+    "message": "Запази",
+    "description": "Бутон: Запази"
+  },
+  "invalidFeeValue": {
+    "message": "Невалидна стойност за таксата",
+    "description": "Грешка: Невалидна стойност за таксата"
+  },
+  "feeCannotBeLess": {
+    "message": "Таксата не може да е по-малка от $1 HTN",
+    "description": "Грешка: Таксата не може да е по-малка от $1 HTN",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "0.00001000"
+      }
+    }
+  },
+  "insufficientBalanceForFee": {
+    "message": "Недостатъчен баланс за тази такса",
+    "description": "Грешка: Недостатъчен баланс за тази такса"
+  },
+  "feeWarningHigher": {
+    "message": "Внимание: Таксата е $1x по-висока от минималната!",
+    "description": "Предупреждение: Внимание: Таксата е $1x по-висока от минималната!",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "10.0"
+      }
+    }
+  },
+  "total": {
+    "message": "Общо",
+    "description": "Етикет: Общо"
+  },
+  "verifyDetails": {
+    "message": "Моля, проверете всички детайли преди потвърждение",
+    "description": "Предупреждение: Моля, проверете всички детайли преди потвърждение"
+  },
+  "confirmAndSend": {
+    "message": "Потвърди и изпрати",
+    "description": "Бутон: Потвърди и изпрати"
+  },
+  "settings": {
+    "message": "Настройки",
+    "description": "Заглавие: Настройки"
+  },
+  "connectedSites": {
+    "message": "Свързани сайтове",
+    "description": "Бутон: Свързани сайтове"
+  },
+  "changePassword": {
+    "message": "Смяна на парола",
+    "description": "Бутон: Смяна на парола"
+  },
+  "exportPrivateKey": {
+    "message": "Експортиране на личния ключ",
+    "description": "Бутон: Експортиране на личния ключ"
+  },
+  "resetWallet": {
+    "message": "Нулиране на портфейла",
+    "description": "Бутон: Нулиране на портфейла"
+  },
+  "resetWalletTitle": {
+    "message": "Нулиране на портфейла",
+    "description": "Заглавие: Нулиране на портфейла"
+  },
+  "resetWalletConfirm": {
+    "message": "Сигурни ли сте? Това ще изтрие портфейла ви. Уверете се, че сте архивирали личния си ключ!",
+    "description": "Съобщение: Сигурни ли сте? Това ще изтрие портфейла ви. Уверете се, че сте архивирали личния си ключ!"
+  },
+  "confirm": {
+    "message": "Потвърди",
+    "description": "Бутон: Потвърди"
+  },
+  "connectedSitesTitle": {
+    "message": "Свързани сайтове",
+    "description": "Заглавие: Свързани сайтове"
+  },
+  "noConnectedSites": {
+    "message": "Няма свързани сайтове",
+    "description": "Съобщение: Няма свързани сайтове"
+  },
+  "noConnectedSitesDesc": {
+    "message": "Когато свържете портфейла си към сайт, той ще се появи тук.",
+    "description": "Описание: Когато свържете портфейла си към сайт, той ще се появи тук."
+  },
+  "connectedSitesInfo": {
+    "message": "Свързаните сайтове могат да виждат адреса на портфейла ви и да заявяват транзакции. Прекъснете връзката със сайтове, които вече не използвате или на които не вярвате.",
+    "description": "Описание: Свързаните сайтове могат да виждат адреса на портфейла ви и да заявяват транзакции. Прекъснете връзката със сайтове, които вече не използвате или на които не вярвате."
+  },
+  "connected": {
+    "message": "Свързан",
+    "description": "Префикс: Свързан"
+  },
+  "disconnect": {
+    "message": "Прекъсни",
+    "description": "Бутон: Прекъсни"
+  },
+  "disconnectSite": {
+    "message": "Прекъсване на връзка със сайт",
+    "description": "Заглавие: Прекъсване на връзка със сайт"
+  },
+  "disconnectSiteConfirm": {
+    "message": "Сигурни ли сте, че искате да прекъснете връзката с $1? Сайтът ще трябва отново да поиска връзка.",
+    "description": "Описание: Сигурни ли сте, че искате да прекъснете връзката с $1? Сайтът ще трябва отново да поиска връзка.",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "example.com"
+      }
+    }
+  },
+  "justNow": {
+    "message": "току-що",
+    "description": "Описание: току-що"
+  },
+  "minuteAgo": {
+    "message": "преди $1 минута",
+    "description": "Описание: преди $1 минута",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "minutesAgo": {
+    "message": "преди $1 минута|преди $1 минути",
+    "description": "Описание: преди $1 минута|преди $1 минути",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "5"
+      }
+    }
+  },
+  "hourAgo": {
+    "message": "преди $1 час",
+    "description": "Описание: преди $1 час",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "hoursAgo": {
+    "message": "преди $1 час|преди $1 часа",
+    "description": "Описание: преди $1 час|преди $1 часа",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "2"
+      }
+    }
+  },
+  "dayAgo": {
+    "message": "преди $1 ден",
+    "description": "Описание: преди $1 ден",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "1"
+      }
+    }
+  },
+  "daysAgo": {
+    "message": "преди $1 дни",
+    "description": "Описание: преди $1 дни",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "changePasswordTitle": {
+    "message": "Смяна на парола",
+    "description": "Заглавие: Смяна на парола"
+  },
+  "changePasswordWarning": {
+    "message": "След като смените паролата си, не забравяйте да я запомните. Не можете да възстановите портфейла си без правилната парола!",
+    "description": "Предупреждение: След като смените паролата си, не забравяйте да я запомните. Не можете да възстановите портфейла си без правилната парола!"
+  },
+  "currentPassword": {
+    "message": "Текуща парола",
+    "description": "Етикет: Текуща парола"
+  },
+  "enterCurrentPassword": {
+    "message": "Въведете текущата парола",
+    "description": "Подсказка: Въведете текущата парола"
+  },
+  "newPassword": {
+    "message": "Нова парола",
+    "description": "Етикет: Нова парола"
+  },
+  "enterNewPassword": {
+    "message": "Въведете нова парола",
+    "description": "Подсказка: Въведете нова парола"
+  },
+  "confirmNewPassword": {
+    "message": "Потвърдете новата парола",
+    "description": "Етикет: Потвърдете новата парола"
+  },
+  "confirmNewPasswordPlaceholder": {
+    "message": "Потвърдете новата парола",
+    "description": "Подсказка: Потвърдете новата парола"
+  },
+  "changePasswordButton": {
+    "message": "Смени паролата",
+    "description": "Бутон: Смени паролата"
+  },
+  "currentPasswordRequired": {
+    "message": "Изисква се текуща парола",
+    "description": "Грешка: Изисква се текуща парола"
+  },
+  "newPasswordRequired": {
+    "message": "Изисква се нова парола",
+    "description": "Грешка: Изисква се нова парола"
+  },
+  "newPasswordsDoNotMatch": {
+    "message": "Новите пароли не съвпадат",
+    "description": "Грешка: Новите пароли не съвпадат"
+  },
+  "newPasswordMustBeDifferent": {
+    "message": "Новата парола трябва да е различна от текущата",
+    "description": "Грешка: Новата парола трябва да е различна от текущата"
+  },
+  "passwordMustBeAtLeast": {
+    "message": "Паролата трябва да е поне $1 знака",
+    "description": "Описание: Паролата трябва да е поне $1 знака",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "8"
+      }
+    }
+  },
+  "changingPassword": {
+    "message": "Смяна на паролата...",
+    "description": "Състояние: Смяна на паролата..."
+  },
+  "failedToChangePassword": {
+    "message": "Неуспешна смяна на паролата",
+    "description": "Грешка: Неуспешна смяна на паролата"
+  },
+  "weakPassword": {
+    "message": "Слаба парола",
+    "description": "Индикатор: Слаба парола"
+  },
+  "mediumPassword": {
+    "message": "Средна парола",
+    "description": "Индикатор: Средна парола"
+  },
+  "strongPassword": {
+    "message": "Силна парола",
+    "description": "Индикатор: Силна парола"
+  },
+  "exportPrivateKeyTitle": {
+    "message": "Експортиране на личния ключ",
+    "description": "Заглавие: Експортиране на личния ключ"
+  },
+  "securityWarning": {
+    "message": "Предупреждение за сигурност!",
+    "description": "Заглавие: Предупреждение за сигурност!"
+  },
+  "neverSharePrivateKey": {
+    "message": "Никога не споделяйте личния си ключ с никого. Всеки, който има достъп до личния ви ключ, може да открадне средствата ви!",
+    "description": "Предупреждение: Никога не споделяйте личния си ключ с никого. Всеки, който има достъп до личния ви ключ, може да открадне средствата ви!"
+  },
+  "enterPasswordToConfirm": {
+    "message": "Въведете парола за потвърждение",
+    "description": "Етикет: Въведете парола за потвърждение"
+  },
+  "showPrivateKey": {
+    "message": "Покажи личния ключ",
+    "description": "Бутон: Покажи личния ключ"
+  },
+  "verifying": {
+    "message": "Проверка...",
+    "description": "Състояние: Проверка..."
+  },
+  "keepThisKeySafe": {
+    "message": "Пазете този ключ!",
+    "description": "Заглавие: Пазете този ключ!"
+  },
+  "keepKeySafeWarning": {
+    "message": "Всеки с този ключ може да има достъп до средствата ви. Съхранявайте го сигурно и никога не го споделяйте.",
+    "description": "Предупреждение: Всеки с този ключ може да има достъп до средствата ви. Съхранявайте го сигурно и никога не го споделяйте."
+  },
+  "hideKey": {
+    "message": "Скрий ключа",
+    "description": "Бутон: Скрий ключа"
+  },
+  "showKey": {
+    "message": "Покажи ключа",
+    "description": "Бутон: Покажи ключа"
+  },
+  "copiedToClipboard": {
+    "message": "Копирано в клипборда!",
+    "description": "Известие: Копирано в клипборда!"
+  },
+  "bestPractices": {
+    "message": "Добри практики:",
+    "description": "Заглавие: Добри практики:"
+  },
+  "bestPractice1": {
+    "message": "Запишете го на хартия и го съхранявайте на безопасно място",
+    "description": "Описание: Запишете го на хартия и го съхранявайте на безопасно място"
+  },
+  "bestPractice2": {
+    "message": "Използвайте мениджър на пароли (шифрован)",
+    "description": "Описание: Използвайте мениджър на пароли (шифрован)"
+  },
+  "bestPractice3": {
+    "message": "Никога не го съхранявайте в обикновени текстови файлове",
+    "description": "Описание: Никога не го съхранявайте в обикновени текстови файлове"
+  },
+  "bestPractice4": {
+    "message": "Никога не го изпращайте по имейл или приложения за съобщения",
+    "description": "Описание: Никога не го изпращайте по имейл или приложения за съобщения"
+  },
+  "done": {
+    "message": "Готово",
+    "description": "Бутон: Готово"
+  },
+  "loading": {
+    "message": "Зареждане...",
+    "description": "Описание: Зареждане..."
+  },
+  "language": {
+    "message": "Език",
+    "description": "Етикет: Език"
+  },
+  "languageSettings": {
+    "message": "Настройки за език",
+    "description": "Заглавие: Настройки за език"
+  },
+  "selectLanguage": {
+    "message": "Изберете език",
+    "description": "Етикет: Изберете език"
+  },
+  "languageChanged": {
+    "message": "Езикът е променен успешно",
+    "description": "Известие: Езикът е променен успешно"
+  },
+  "languageAuto": {
+    "message": "Автоматично (по подразбиране на браузъра)",
+    "description": "Описание: Автоматично (по подразбиране на браузъра)"
+  },
+  "languageEnglish": {
+    "message": "English (Английски)",
+    "description": "Описание: English (Английски)"
+  },
+  "languageRussian": {
+    "message": "Русский (Руски)",
+    "description": "Описание: Русский (Руски)"
+  },
+  "languageChinese": {
+    "message": "简体中文 (Опростен китайски)",
+    "description": "Описание: 简体中文 (Опростен китайски)"
+  },
+  "languageSpanish": {
+    "message": "Español (Испански)",
+    "description": "Описание: Español (Испански)"
+  },
+  "languageFinnish": {
+    "message": "Suomi (Фински)",
+    "description": "Описание: Suomi (Фински)"
+  },
+  "languageJapanese": {
+    "message": "日本語 (Японски)",
+    "description": "Описание: 日本語 (Японски)"
+  },
+  "languageKorean": {
+    "message": "한국어 (Корейски)",
+    "description": "Описание: 한국어 (Корейски)"
+  },
+  "languageTurkish": {
+    "message": "Türkçe (Турски)",
+    "description": "Описание: Türkçe (Турски)"
+  },
+  "languageGerman": {
+    "message": "Deutsch (Немски)",
+    "description": "Описание: Deutsch (Немски)"
+  },
+  "languageBulgarian": {
+    "message": "Български",
+    "description": "Описание: Български"
+  },
+  "failedToChangeLanguage": {
+    "message": "Неуспешна смяна на езика",
+    "description": "Грешка: Неуспешна смяна на езика"
+  },
+  "utxoConsolidation": {
+    "message": "Консолидация на UTXO",
+    "description": "Заглавие: Консолидация на UTXO"
+  },
+  "consolidationRecommended": {
+    "message": "Препоръчва се консолидация на UTXO",
+    "description": "Заглавие: Препоръчва се консолидация на UTXO"
+  },
+  "yourWalletHasUtxos": {
+    "message": "Портфейлът ви има $1 UTXO",
+    "description": "Съобщение: Портфейлът ви има $1 UTXO",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "45"
+      }
+    }
+  },
+  "currentTransactionFee": {
+    "message": "Текуща такса за транзакция: $1 HTN",
+    "description": "Описание: Текуща такса за транзакция: $1 HTN",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "0.0005"
+      }
+    }
+  },
+  "consolidationFee": {
+    "message": "Такса за консолидация: $1 HTN",
+    "description": "Описание: Такса за консолидация: $1 HTN",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "0.0015"
+      }
+    }
+  },
+  "futureSavings": {
+    "message": "Бъдещи спестявания: ~$1 HTN",
+    "description": "Описание: Бъдещи спестявания: ~$1 HTN",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "0.0040"
+      }
+    }
+  },
+  "consolidationDescription": {
+    "message": "Консолидацията ще обедини всички UTXO в едно, като намали бъдещите такси за транзакции.",
+    "description": "Описание: Консолидацията ще обедини всички UTXO в едно, като намали бъдещите такси за транзакции."
+  },
+  "consolidateNow": {
+    "message": "Консолидирай сега",
+    "description": "Бутон: Консолидирай сега"
+  },
+  "later": {
+    "message": "По-късно",
+    "description": "Бутон: По-късно"
+  },
+  "consolidating": {
+    "message": "Консолидация на UTXO...",
+    "description": "Описание: Консолидация на UTXO..."
+  },
+  "combiningUtxos": {
+    "message": "Обединяване на $1 UTXO в 1",
+    "description": "Съобщение: Обединяване на $1 UTXO в 1",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "45"
+      }
+    }
+  },
+  "buildingTransaction": {
+    "message": "Създаване на транзакция...",
+    "description": "Състояние: Създаване на транзакция..."
+  },
+  "consolidationComplete": {
+    "message": "Консолидацията завърши!",
+    "description": "Заглавие: Консолидацията завърши!"
+  },
+  "consolidationCompleteMultiple": {
+    "message": "Консолидацията завърши! Създадени са $1 транзакции",
+    "description": "Описание: Консолидацията завърши! Създадени са $1 транзакции",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "consolidatedInBatches": {
+    "message": "Обработено в $1 партиди (лимит на нода: 88 входа/tx)",
+    "description": "Описание: Обработено в $1 партиди (лимит на нода: 88 входа/tx)",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "3"
+      }
+    }
+  },
+  "utxosReduced": {
+    "message": "UTXO: $1 → 1",
+    "description": "Съобщение: UTXO: $1 → 1",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "45"
+      }
+    }
+  },
+  "feePaid": {
+    "message": "Платена такса: $1 HTN",
+    "description": "Съобщение: Платена такса: $1 HTN",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "0.0015"
+      }
+    }
+  },
+  "futureTransactionsCheaper": {
+    "message": "Бъдещите транзакции ще са по-евтини!",
+    "description": "Съобщение: Бъдещите транзакции ще са по-евтини!"
+  },
+  "utxoManagement": {
+    "message": "Управление на UTXO",
+    "description": "Заглавие: Управление на UTXO"
+  },
+  "currentUtxos": {
+    "message": "Текущи UTXO: $1",
+    "description": "Описание: Текущи UTXO: $1",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "45"
+      }
+    }
+  },
+  "consolidateUtxos": {
+    "message": "Консолидирай UTXO",
+    "description": "Бутон: Консолидирай UTXO"
+  },
+  "autoConsolidateWhen": {
+    "message": "Авто-консолидация при > $1 UTXO",
+    "description": "Описание: Авто-консолидация при > $1 UTXO",
+    "placeholders": {
+      "1": {
+        "content": "$1",
+        "example": "30"
+      }
+    }
+  },
+  "consolidationFailed": {
+    "message": "Консолидацията не успя",
+    "description": "Заглавие: Консолидацията не успя"
+  },
+  "checkingUtxos": {
+    "message": "Проверка на UTXO...",
+    "description": "Състояние: Проверка на UTXO..."
+  },
+  "autoLockSettings": {
+    "message": "Настройки за автоматично заключване",
+    "description": "Заглавие: Настройки за автоматично заключване"
+  },
+  "autoLockTimeout": {
+    "message": "Автоматично заключване след неактивност",
+    "description": "Етикет: Автоматично заключване след неактивност"
+  },
+  "minutes": {
+    "message": "минути",
+    "description": "Мерна единица: минути"
+  },
+  "autoLockHint": {
+    "message": "Портфейлът ще се заключва автоматично след избрания период на неактивност, за да защити средствата ви.",
+    "description": "Описание: Портфейлът ще се заключва автоматично след избрания период на неактивност, за да защити средствата ви."
+  },
+  "failedToUpdateSettings": {
+    "message": "Неуспешно обновяване на настройките",
+    "description": "Грешка: Неуспешно обновяване на настройките"
+  },
+  "success": {
+    "message": "Успех",
+    "description": "Заглавие: Успех"
+  },
+  "error": {
+    "message": "Грешка",
+    "description": "Заглавие: Грешка"
+  },
+  "connectionRequest": {
+    "message": "Заявка за връзка",
+    "description": "Заглавие: Заявка за връзка"
+  },
+  "siteRequestingConnection": {
+    "message": "Сайтът иска връзка:",
+    "description": "Етикет: Сайтът иска връзка:"
+  },
+  "requestedTime": {
+    "message": "Заявено",
+    "description": "Префикс: Заявено"
+  },
+  "oldRequestWarning": {
+    "message": "Стара заявка",
+    "description": "Предупреждение: Стара заявка"
+  },
+  "thisSiteWillBeAbleTo": {
+    "message": "Този сайт ще може да:",
+    "description": "Описание: Този сайт ще може да:"
+  },
+  "viewYourWalletAddress": {
+    "message": "Вижда адреса на портфейла ви",
+    "description": "Описание: Вижда адреса на портфейла ви"
+  },
+  "requestTransactionApprovals": {
+    "message": "Иска потвърждение на транзакции",
+    "description": "Описание: Иска потвърждение на транзакции"
+  },
+  "viewAccountBalance": {
+    "message": "Вижда баланса на акаунта ви",
+    "description": "Описание: Вижда баланса на акаунта ви"
+  },
+  "onlyConnectTrustedSites": {
+    "message": "Свързвайте се само към сайтове, на които имате доверие!",
+    "description": "Предупреждение: Свързвайте се само към сайтове, на които имате доверие!"
+  },
+  "maliciousSitesWarning": {
+    "message": "Злонамерени сайтове може да се опитат да откраднат средствата ви.",
+    "description": "Предупреждение: Злонамерени сайтове може да се опитат да откраднат средствата ви."
+  },
+  "reject": {
+    "message": "Откажи",
+    "description": "Бутон: Откажи"
+  },
+  "connect": {
+    "message": "Свържи",
+    "description": "Бутон: Свържи"
+  },
+  "connecting": {
+    "message": "Свързване...",
+    "description": "Състояние: Свързване..."
+  },
+  "rejecting": {
+    "message": "Отказване...",
+    "description": "Състояние: Отказване..."
+  },
+  "failedToApproveConnection": {
+    "message": "Неуспешно одобряване на връзката",
+    "description": "Грешка: Неуспешно одобряване на връзката"
+  },
+  "failedToRejectConnection": {
+    "message": "Неуспешен отказ на връзката",
+    "description": "Грешка: Неуспешен отказ на връзката"
+  },
+  "signMessage": {
+    "message": "Подписване на съобщение",
+    "description": "Заглавие: Подписване на съобщение"
+  },
+  "siteRequestingSignature": {
+    "message": "Сайтът иска подпис:",
+    "description": "Етикет: Сайтът иска подпис:"
+  },
+  "messageToSign": {
+    "message": "Съобщение за подпис:",
+    "description": "Етикет: Съобщение за подпис:"
+  },
+  "messageTruncated": {
+    "message": "(Съобщението е съкратено за показване)",
+    "description": "Съобщение: (Съобщението е съкратено за показване)"
+  },
+  "signingProveOwnership": {
+    "message": "Подписването на това съобщение доказва, че притежавате този адрес на портфейла.",
+    "description": "Съобщение: Подписването на това съобщение доказва, че притежавате този адрес на портфейла."
+  },
+  "signingIsFree": {
+    "message": "Това действие е безплатно и не изпраща транзакция.",
+    "description": "Описание: Това действие е безплатно и не изпраща транзакция."
+  },
+  "onlySignUnderstood": {
+    "message": "Подписвайте само съобщения, които разбирате!",
+    "description": "Предупреждение: Подписвайте само съобщения, които разбирате!"
+  },
+  "maliciousSigningWarning": {
+    "message": "Злонамерени сайтове може да ви подведат да подпишете вредни съобщения.",
+    "description": "Предупреждение: Злонамерени сайтове може да ви подведат да подпишете вредни съобщения."
+  },
+  "signing": {
+    "message": "Подписване...",
+    "description": "Състояние: Подписване..."
+  },
+  "failedToSignMessage": {
+    "message": "Неуспешно подписване на съобщението",
+    "description": "Грешка: Неуспешно подписване на съобщението"
+  },
+  "failedToReject": {
+    "message": "Неуспешен отказ",
+    "description": "Грешка: Неуспешен отказ"
+  },
+  "welcomeBack": {
+    "message": "Добре дошли отново!",
+    "description": "Съобщение: Добре дошли отново!"
+  },
+  "siteConnectedSuccessfully": {
+    "message": "Сайтът е свързан успешно!",
+    "description": "Описание: Сайтът е свързан успешно!"
+  },
+  "connectionRejected": {
+    "message": "Връзката е отказана",
+    "description": "Описание: Връзката е отказана"
+  },
+  "transactionApproved": {
+    "message": "Транзакцията е одобрена!",
+    "description": "Описание: Транзакцията е одобрена!"
+  },
+  "transactionRejected": {
+    "message": "Транзакцията е отказана",
+    "description": "Описание: Транзакцията е отказана"
+  },
+  "messageSignedSuccessfully": {
+    "message": "Съобщението е подписано успешно!",
+    "description": "Съобщение: Съобщението е подписано успешно!"
+  },
+  "messageSigningRejected": {
+    "message": "Подписването на съобщението е отказано",
+    "description": "Съобщение: Подписването на съобщението е отказано"
+  },
+  "walletCreatedSuccessfully": {
+    "message": "Портфейлът е създаден успешно!",
+    "description": "Описание: Портфейлът е създаден успешно!"
+  },
+  "walletImportedSuccessfully": {
+    "message": "Портфейлът е импортиран успешно!",
+    "description": "Описание: Портфейлът е импортиран успешно!"
+  },
+  "transactionSentTxId": {
+    "message": "Транзакцията е изпратена! TX ID:",
+    "description": "Описание: Транзакцията е изпратена! TX ID:"
+  },
+  "passwordChangedSuccessfully": {
+    "message": "Паролата е сменена успешно!",
+    "description": "Описание: Паролата е сменена успешно!"
+  },
+  "transactionError": {
+    "message": "Грешка при транзакция",
+    "description": "Заглавие: Грешка при транзакция"
+  },
+  "failedToProcessTransaction": {
+    "message": "Неуспешна обработка на заявката за транзакция:",
+    "description": "Грешка: Неуспешна обработка на заявката за транзакция:"
+  },
+  "unknownError": {
+    "message": "Неизвестна грешка",
+    "description": "Грешка: Неизвестна грешка"
+  },
+  "backToWallet": {
+    "message": "Назад към портфейла",
+    "description": "Бутон: Назад към портфейла"
+  },
+  "qrCodeGenerationFailed": {
+    "message": "Неуспешно генериране на QR код",
+    "description": "Грешка: Неуспешно генериране на QR код"
+  },
+  "approveConnectionTitle": {
+    "message": "Одобряване на връзка",
+    "description": "Заглавие: Одобряване на връзка"
+  },
+  "approveConnectionMessage": {
+    "message": "Този сайт иска да се свърже с портфейла ви. Отключете, за да одобрите или откажете.",
+    "description": "Съобщение: Този сайт иска да се свърже с портфейла ви. Отключете, за да одобрите или откажете."
+  },
+  "approveConnectionMessageComplete": {
+    "message": "Този сайт иска да се свърже с портфейла ви. Отключете, за да завършите връзката.",
+    "description": "Съобщение: Този сайт иска да се свърже с портфейла ви. Отключете, за да завършите връзката."
+  },
+  "approveTransactionTitle": {
+    "message": "Одобряване на транзакция",
+    "description": "Заглавие: Одобряване на транзакция"
+  },
+  "approveTransactionMessage": {
+    "message": "Този сайт иска да изпрати транзакция. Отключете, за да прегледате и одобрите.",
+    "description": "Съобщение: Този сайт иска да изпрати транзакция. Отключете, за да прегледате и одобрите."
+  },
+  "signMessageTitle": {
+    "message": "Подписване на съобщение",
+    "description": "Заглавие: Подписване на съобщение"
+  },
+  "signMessageMessage": {
+    "message": "Този сайт иска да подпишете съобщение. Отключете, за да прегледате и подпишете.",
+    "description": "Съобщение: Този сайт иска да подпишете съобщение. Отключете, за да прегледате и подпишете."
+  }
+}

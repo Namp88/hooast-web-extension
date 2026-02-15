@@ -1,9 +1,131 @@
+import * as bip39 from 'bip39';
+import { HDKey } from '@scure/bip32';
 import { WalletData } from '../../shared/types';
+import { DEFAULT_NETWORK } from '../../shared/constants';
 import { addWallet, loadWallet, saveWallet, clearAllData, hasWallet, getCurrentWallet } from '../../shared/storage';
 import { encryptPrivateKey, decryptPrivateKey } from '../../shared/crypto';
 import { MIN_PASSWORD_LENGTH } from '../../shared/constants';
 import { WalletManager } from '../wallet-manager';
 import { HoosatCrypto } from 'hoosat-sdk-web';
+const DERIVATION_METHODS = [
+  (accountIndex: number, addressIndex: number) => `m/44'/972'/${accountIndex}'/0/${addressIndex}`,
+  (accountIndex: number, addressIndex: number) => `m/44'/111111'/${accountIndex}'/0/${addressIndex}`,
+  (accountIndex: number, addressIndex: number) => `m/44'/0'/${accountIndex}'/0/${addressIndex}`,
+  (accountIndex: number, addressIndex: number) => `m/44'/1'/${accountIndex}'/0/${addressIndex}`,
+  (accountIndex: number, addressIndex: number) => `m/44'/972'/${accountIndex}'/${addressIndex}`,
+  (accountIndex: number, addressIndex: number) => `m/44'/972'/0/${addressIndex}`,
+  (accountIndex: number, addressIndex: number) => `m/44'/972'/${addressIndex}`,
+  (_accountIndex: number, addressIndex: number) => `m/0/${addressIndex}`,
+  (_accountIndex: number, addressIndex: number) => `m/0'/0/${addressIndex}`,
+  (_accountIndex: number, addressIndex: number) => `m/44'/${addressIndex}`,
+];
+const MAX_ACCOUNT_INDEX = 0;
+const MAX_ADDRESS_INDEX = 10;
+
+function normalizeMnemonic(mnemonic: string): string {
+  return mnemonic
+    .trim()
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean)
+    .join(' ');
+}
+
+function getAddressesForPrivateKey(privateKeyHex: string): { ecdsa: string; schnorr: string } {
+  const privateKey = Buffer.from(privateKeyHex, 'hex');
+  const publicKey = HoosatCrypto.getPublicKey(privateKey);
+  const schnorrPublicKey = Buffer.from(publicKey.slice(1));
+
+  return {
+    ecdsa: HoosatCrypto.publicKeyToAddressECDSA(publicKey, DEFAULT_NETWORK),
+    schnorr: HoosatCrypto.publicKeyToAddress(schnorrPublicKey, DEFAULT_NETWORK),
+  };
+}
+
+async function getBalanceSafe(address: string, walletManager: WalletManager): Promise<bigint> {
+  try {
+    const balance = await walletManager.getBalance(address);
+    return BigInt(balance);
+  } catch {
+    return 0n;
+  }
+}
+
+async function saveImportedWallet(privateKeyHex: string, address: string, password: string): Promise<{ address: string }> {
+  const encryptedPrivateKey = encryptPrivateKey(privateKeyHex, password);
+
+  const walletData: WalletData = {
+    address,
+    encryptedPrivateKey,
+    createdAt: Date.now(),
+  };
+
+  await addWallet(walletData);
+
+  console.log('✅ Wallet imported:', address);
+
+  return { address };
+}
+
+async function deriveWalletFromMnemonic(
+  mnemonic: string,
+  walletManager: WalletManager
+): Promise<{ privateKeyHex: string; address: string; addressType: 'ecdsa' | 'schnorr' }> {
+  const normalized = normalizeMnemonic(mnemonic);
+  const words = normalized.split(' ');
+
+  if (words.length !== 12 && words.length !== 24) {
+    throw new Error('Mnemonic must be 12 or 24 words');
+  }
+
+  if (!bip39.validateMnemonic(normalized)) {
+    throw new Error('Invalid mnemonic phrase');
+  }
+
+  const seed = bip39.mnemonicToSeedSync(normalized);
+  const root = HDKey.fromMasterSeed(seed);
+
+  let fallback: { privateKeyHex: string; address: string; addressType: 'ecdsa' | 'schnorr' } | null = null;
+
+  for (let accountIndex = 0; accountIndex <= MAX_ACCOUNT_INDEX; accountIndex++) {
+    for (let addressIndex = 0; addressIndex <= MAX_ADDRESS_INDEX; addressIndex++) {
+      for (const pathFor of DERIVATION_METHODS) {
+        const path = pathFor(accountIndex, addressIndex);
+        try {
+          const child = root.derive(path);
+          if (!child.privateKey || child.privateKey.length !== 32) {
+            continue;
+          }
+
+          const privateKeyHex = Buffer.from(child.privateKey).toString('hex');
+          const addresses = getAddressesForPrivateKey(privateKeyHex);
+
+          if (!fallback) {
+            fallback = { privateKeyHex, address: addresses.ecdsa, addressType: 'ecdsa' };
+          }
+
+          const schnorrBalance = await getBalanceSafe(addresses.schnorr, walletManager);
+          if (schnorrBalance > 0n) {
+            return { privateKeyHex, address: addresses.schnorr, addressType: 'schnorr' };
+          }
+
+          const ecdsaBalance = await getBalanceSafe(addresses.ecdsa, walletManager);
+          if (ecdsaBalance > 0n) {
+            return { privateKeyHex, address: addresses.ecdsa, addressType: 'ecdsa' };
+          }
+        } catch {
+          // Skip invalid paths
+        }
+      }
+    }
+  }
+
+  if (!fallback) {
+    throw new Error('Failed to derive private key from mnemonic');
+  }
+
+  return fallback;
+}
 
 /**
  * Generate new wallet
@@ -85,6 +207,24 @@ export async function handleImportWallet(
     return { address };
   } catch (error: any) {
     console.error('❌ Failed to import wallet:', error);
+    throw new Error(error.message || 'Failed to import wallet');
+  }
+}
+
+/**
+ * Import/Create wallet from mnemonic
+ */
+export async function handleImportWalletFromMnemonic(
+  data: { mnemonic: string; password: string },
+  walletManager: WalletManager
+): Promise<{ address: string }> {
+  const { mnemonic, password } = data;
+
+  try {
+    const derived = await deriveWalletFromMnemonic(mnemonic, walletManager);
+    return await saveImportedWallet(derived.privateKeyHex, derived.address, password);
+  } catch (error: any) {
+    console.error('❌ Failed to import wallet from mnemonic:', error);
     throw new Error(error.message || 'Failed to import wallet');
   }
 }

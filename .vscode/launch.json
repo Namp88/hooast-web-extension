@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Chrome: Debug Hoosat extension",
+      "type": "pwa-chrome",
+      "request": "launch",
+      "preLaunchTask": "webpack: build",
+      "runtimeExecutable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "userDataDir": "${env:TEMP}\\hoosat-vscode-profile",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--disable-gpu",
+        "--load-extension=\\\\wsl$\\ubuntu-dev\\home\\larry\\hoosat-web-extension\\dist"
+      ],
+      "url": "chrome://extensions/",
+      "webRoot": "${workspaceFolder}",
+      "sourceMaps": true,
+      "smartStep": true
+    }
+  ]
+}

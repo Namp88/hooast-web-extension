@@ -4,7 +4,7 @@
 
 const LANGUAGE_STORAGE_KEY = 'hoosat_language';
 
-export type SupportedLanguage = 'auto' | 'en' | 'ru' | 'zh_CN' | 'es' | 'fi' | 'ja' | 'ko' | 'tr' | 'de';
+export type SupportedLanguage = 'auto' | 'en' | 'ru' | 'zh_CN' | 'es' | 'fi' | 'ja' | 'ko' | 'tr' | 'de' | 'bg';
 
 export interface LanguageOption {
   code: SupportedLanguage;
@@ -23,6 +23,7 @@ export const AVAILABLE_LANGUAGES: LanguageOption[] = [
   { code: 'ko', nameKey: 'languageKorean', nativeName: '한국어' },
   { code: 'tr', nameKey: 'languageTurkish', nativeName: 'Türkçe' },
   { code: 'de', nameKey: 'languageGerman', nativeName: 'Deutsch' },
+  { code: 'bg', nameKey: 'languageBulgarian', nativeName: 'Български' },
 ];
 
 /**
@@ -71,6 +72,7 @@ export function getEffectiveLanguage(selectedLanguage: SupportedLanguage): strin
     if (browserLang.startsWith('ko')) return 'ko';
     if (browserLang.startsWith('tr')) return 'tr';
     if (browserLang.startsWith('de')) return 'de';
+    if (browserLang.startsWith('bg')) return 'bg';
     return 'en'; // Default fallback
   }
 

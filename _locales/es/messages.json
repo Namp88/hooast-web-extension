@@ -409,10 +409,6 @@
     "message": "¿Estás seguro? Esto eliminará tu billetera. ¡Asegúrate de haber respaldado tu clave privada!",
     "description": "Reset wallet confirmation message"
   },
-  "cancel": {
-    "message": "Cancelar",
-    "description": "Cancel button"
-  },
   "confirm": {
     "message": "Confirmar",
     "description": "Confirm button"
@@ -456,8 +452,8 @@
     }
   },
   "justNow": {
-    "message": "justo ahora",
-    "description": "Just now time"
+    "message": "ahora mismo",
+    "description": "Time ago: just now"
   },
   "minuteAgo": {
     "message": "hace $1 minuto",
@@ -470,8 +466,8 @@
     }
   },
   "minutesAgo": {
-    "message": "hace $1 minutos",
-    "description": "Minutes ago time",
+    "message": "hace $1 minuto|hace $1 minutos",
+    "description": "Time ago: minutes",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -490,8 +486,8 @@
     }
   },
   "hoursAgo": {
-    "message": "hace $1 horas",
-    "description": "Hours ago time",
+    "message": "hace $1 hora|hace $1 horas",
+    "description": "Time ago: hours",
     "placeholders": {
       "1": {
         "content": "$1",
@@ -1097,28 +1093,36 @@
     "message": "Este sitio quiere que firmes un mensaje. Desbloquea para revisar y firmar.",
     "description": "Unlock screen message for message signing"
   },
-  "justNow": {
-    "message": "ahora mismo",
-    "description": "Time ago: just now"
+  "importMnemonicWalletDesc": {
+    "message": "Import from mnemonic",
+    "description": "Import from mnemonic description"
   },
-  "minutesAgo": {
-    "message": "hace $1 minuto|hace $1 minutos",
-    "description": "Time ago: minutes",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "5"
-      }
-    }
+  "importMnemonicTitle": {
+    "message": "Import from Mnemonic",
+    "description": "Import wallet from mnemonic title"
   },
-  "hoursAgo": {
-    "message": "hace $1 hora|hace $1 horas",
-    "description": "Time ago: hours",
-    "placeholders": {
-      "1": {
-        "content": "$1",
-        "example": "2"
-      }
-    }
+  "mnemonicPhrase": {
+    "message": "Mnemonic Phrase",
+    "description": "Mnemonic phrase label"
+  },
+  "enterMnemonicPhrase": {
+    "message": "Enter 12 or 24 words",
+    "description": "Mnemonic phrase placeholder"
+  },
+  "mnemonicRequired": {
+    "message": "Mnemonic is required",
+    "description": "Mnemonic required error"
+  },
+  "invalidMnemonic": {
+    "message": "Invalid mnemonic phrase",
+    "description": "Invalid mnemonic error"
+  },
+  "importing": {
+    "message": "Importing...",
+    "description": "Importing status"
+  },
+  "languageBulgarian": {
+    "message": "Български (Bulgarian)",
+    "description": "Bulgarian language name"
   }
 }

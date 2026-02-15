@@ -58,6 +58,22 @@ export async function importWallet(privateKey: string, password: string): Promis
 }
 
 /**
+ * Import wallet from mnemonic
+ */
+export async function importWalletFromMnemonic(mnemonic: string, password: string): Promise<{ address: string }> {
+  const response = await sendMessage({
+    type: 'IMPORT_WALLET_MNEMONIC',
+    data: { mnemonic, password },
+  });
+
+  if (!response.success) {
+    throw new Error(response.error);
+  }
+
+  return response.data;
+}
+
+/**
  * Unlock wallet
  */
 export async function unlockWallet(password: string): Promise<{ address: string }> {
